@@ -12,6 +12,42 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "A.R.M Automotive Mobile Mechanic",
+    "phone": "0450 407 160",
+    "address": "123E Kent Rd, Marsfield NSW 2122, Australia",
+    "slug": "arm-automotive-mobile-mechanic-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/arm-automotive-mobile-mechanic-2/",
+    "business_key": "a.r.m automotive mobile mechanic|0450407160",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/arm-automotive-mobile-mechanic-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/arm-automotive-mobile-mechanic-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\ARM_Automotive_Mobile_Mechanic",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "All About iBrows",
+    "phone": "0410 907 020",
+    "address": "K2006, Level 2/74 Opp Sussan, Macquarie Park NSW 2113, Australia",
+    "slug": "all-about-ibrows",
+    "public_url": "https://muhanadbin-hue.github.io/demos/all-about-ibrows/",
+    "business_key": "all about ibrows|0410907020",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\All_About_iBrows",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "All About iBrows",
+    "phone": "0404960871",
+    "address": "The design, copy, and image treatment are adjusted based on the business category, public details, reviews, and available assets.",
+    "slug": "all-about-ibrows",
+    "public_url": "https://muhanadbin-hue.github.io/demos/all-about-ibrows/",
+    "business_key": "all about ibrows|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.pdf"
+  },
+  {
     "business_name": "As Usual",
     "phone": "0404960871",
     "address": "Indulge in delicious food and expertly crafted coffee in a warm and welcoming atmosphere.",
@@ -21,6 +57,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\As_Usual",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "As Usual",
+    "phone": "0437 557 522",
+    "address": "shop 8/101 Waterloo Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "as-usual-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/as-usual-2/",
+    "business_key": "as usual|0437557522",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\As_Usual",
     "uploaded_this_run": false
   },
   {
@@ -36,6 +84,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "BaptistCare HopeCleaning",
+    "phone": "1300 296 570",
+    "address": "Unit 3/157 Balaclava Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "baptistcare-hopecleaning-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/baptistcare-hopecleaning-2/",
+    "business_key": "baptistcare hopecleaning|1300296570",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/baptistcare-hopecleaning-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/baptistcare-hopecleaning-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\BaptistCare_HopeCleaning",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "BATCH ZKK Cafe Macquarie",
     "phone": "0404960871",
     "address": "Experience the best coffee, food, and service in Macquarie Park",
@@ -48,6 +108,30 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "BATCH ZKK Cafe Macquarie",
+    "phone": "(02) 8084 7173",
+    "address": "Optus Dr, Macquarie Park NSW 2113, Australia",
+    "slug": "batch-zkk-cafe-macquarie-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/batch-zkk-cafe-macquarie-2/",
+    "business_key": "batch zkk cafe macquarie|0280847173",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/batch-zkk-cafe-macquarie-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/batch-zkk-cafe-macquarie-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\BATCH_ZKK_Cafe_Macquarie",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Bliss Nails & Beauty Bar Macquarie Centre",
+    "phone": "(02) 7813 6183",
+    "address": "Shop R01-100, North Ryde NSW 2113, Australia",
+    "slug": "bliss-nails-beauty-bar-macquarie-centre-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/bliss-nails-beauty-bar-macquarie-centre-2/",
+    "business_key": "bliss nails & beauty bar macquarie centre|0278136183",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Bliss_Nails_Beauty_Bar_Macquarie_Centre",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Bliss Nails &amp; Beauty Bar Macquarie Centre",
     "phone": "0404960871",
     "address": "Indulge in a luxurious nail salon experience at Macquarie Centre, where our team of experts will pamper you with precision and care.",
@@ -57,6 +141,42 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Bliss_Nails_Beauty_Bar_Macquarie_Centre",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Blue Diamond Carwash",
+    "phone": "0413 469 567",
+    "address": "400 Lane Cove Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "blue-diamond-carwash",
+    "public_url": "https://muhanadbin-hue.github.io/demos/blue-diamond-carwash/",
+    "business_key": "blue diamond carwash|0413469567",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Blue_Diamond_Carwash",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Blue Diamond Carwash",
+    "phone": "0404960871",
+    "address": "The design, copy, and image treatment are adjusted based on the business category, public details, reviews, and available assets.",
+    "slug": "blue-diamond-carwash",
+    "public_url": "https://muhanadbin-hue.github.io/demos/blue-diamond-carwash/",
+    "business_key": "blue diamond carwash|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.pdf"
+  },
+  {
+    "business_name": "Brew & Pour",
+    "phone": "(02) 9887 3198",
+    "address": "11 Talavera Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "brew-pour-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/brew-pour-2/",
+    "business_key": "brew & pour|0298873198",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Brew_Pour",
     "uploaded_this_run": false
   },
   {
@@ -84,6 +204,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Charmed Hair Designers",
+    "phone": "0489 065 483",
+    "address": "288 North Rd, Eastwood NSW 2122, Australia",
+    "slug": "charmed-hair-designers-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/charmed-hair-designers-2/",
+    "business_key": "charmed hair designers|0489065483",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/charmed-hair-designers-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/charmed-hair-designers-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Charmed_Hair_Designers",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Chew Babe Pet Grooming Cafe",
     "phone": "0404960871",
     "address": "Where Pet Grooming Meets Delicious Food and Drink",
@@ -93,6 +225,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Chew_Babe_Pet_Grooming_Cafe",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Chew Babe Pet Grooming Cafe",
+    "phone": "0481 177 734",
+    "address": "Shop 15/101 Waterloo Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "chew-babe-pet-grooming-cafe-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/chew-babe-pet-grooming-cafe-2/",
+    "business_key": "chew babe pet grooming cafe|0481177734",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Chew_Babe_Pet_Grooming_Cafe",
     "uploaded_this_run": false
   },
   {
@@ -108,6 +252,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "CURLi by Lilian",
+    "phone": "0431 146 661",
+    "address": "5 Delhi Rd, North Ryde NSW 2113, Australia",
+    "slug": "curli-by-lilian-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/curli-by-lilian-2/",
+    "business_key": "curli by lilian|0431146661",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/curli-by-lilian-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/curli-by-lilian-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\CURLi_by_Lilian",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Dante&#x27;s Espresso Bar",
     "phone": "0404960871",
     "address": "A premium cafe serving high-quality coffee and Malaysian-inspired dishes in the heart of Macquarie Park.",
@@ -120,6 +276,42 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Dante's Espresso Bar",
+    "phone": "0404960871",
+    "address": "118 Talavera Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "dantes-espresso-bar-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/dantes-espresso-bar-2/",
+    "business_key": "dante's espresso bar|0404960871",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/dantes-espresso-bar-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dantes-espresso-bar-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Dantes_Espresso_Bar",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Deux Cafe",
+    "phone": "0451 453 899",
+    "address": "1 Innovation Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "deux-cafe",
+    "public_url": "https://muhanadbin-hue.github.io/demos/deux-cafe/",
+    "business_key": "deux cafe|0451453899",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Deux_Cafe",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Deux Cafe",
+    "phone": "0404960871",
+    "address": "1 Innovation Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "deux-cafe",
+    "public_url": "https://muhanadbin-hue.github.io/demos/deux-cafe/",
+    "business_key": "deux cafe|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.pdf"
+  },
+  {
     "business_name": "Dr Richard S Vici DENTAL SURGERY",
     "phone": "0404960871",
     "address": "Experience the difference with Dr. Richard S Vici and his team.",
@@ -129,6 +321,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/dr-richard-s-vici-dental-surgery_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dr-richard-s-vici-dental-surgery_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Dr_Richard_S_Vici_DENTAL_SURGERY",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Dr Richard S Vici DENTAL SURGERY",
+    "phone": "(02) 9888 5662",
+    "address": "1/134 Coxs Rd, North Ryde NSW 2113, Australia",
+    "slug": "dr-richard-s-vici-dental-surgery-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/dr-richard-s-vici-dental-surgery-2/",
+    "business_key": "dr richard s vici dental surgery|0298885662",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/dr-richard-s-vici-dental-surgery-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dr-richard-s-vici-dental-surgery-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Dr_Richard_S_Vici_DENTAL_SURGERY",
     "uploaded_this_run": false
   },
   {
@@ -144,6 +348,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Dreamwood Home Services",
+    "phone": "0416 790 414",
+    "address": "Rosedale Rd, Gordon NSW 2072, Australia",
+    "slug": "dreamwood-home-services-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/dreamwood-home-services-2/",
+    "business_key": "dreamwood home services|0416790414",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/dreamwood-home-services-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dreamwood-home-services-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Dreamwood_Home_Services",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Espresso 7ty8",
     "phone": "0404960871",
     "address": "A warm welcome awaits you at our cozy cafe in Macquarie Park",
@@ -156,6 +372,42 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Espresso 7ty8",
+    "phone": "(02) 9889 7557",
+    "address": "78 Waterloo Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "espresso-7ty8-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/espresso-7ty8-2/",
+    "business_key": "espresso 7ty8|0298897557",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/espresso-7ty8-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/espresso-7ty8-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Espresso_7ty8",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Eyelushes & Brows",
+    "phone": "0481 207 668",
+    "address": "152/1-15 Fontenoy Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "eyelushes-brows",
+    "public_url": "https://muhanadbin-hue.github.io/demos/eyelushes-brows/",
+    "business_key": "eyelushes & brows|0481207668",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Eyelushes_Brows",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Eyelushes &amp; Brows",
+    "phone": "0404960871",
+    "address": "The design, copy, and image treatment are adjusted based on the business category, public details, reviews, and available assets.",
+    "slug": "eyelushes-brows",
+    "public_url": "https://muhanadbin-hue.github.io/demos/eyelushes-brows/",
+    "business_key": "eyelushes &amp; brows|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.pdf"
+  },
+  {
     "business_name": "Flame Cafe North Ryde",
     "phone": "0404960871",
     "address": "Indulge in delicious food and exceptional service, every day.",
@@ -165,6 +417,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Flame_Cafe_North_Ryde",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Flame Cafe North Ryde",
+    "phone": "(02) 9888 5286",
+    "address": "Shop 1/195 Coxs Rd, North Ryde NSW 2113, Australia",
+    "slug": "flame-cafe-north-ryde-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/flame-cafe-north-ryde-2/",
+    "business_key": "flame cafe north ryde|0298885286",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Flame_Cafe_North_Ryde",
     "uploaded_this_run": false
   },
   {
@@ -180,6 +444,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Garage Barberz",
+    "phone": "0435 415 215",
+    "address": "4 Winston St, Marsfield NSW 2122, Australia",
+    "slug": "garage-barberz-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/garage-barberz-2/",
+    "business_key": "garage barberz|0435415215",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/garage-barberz-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/garage-barberz-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Garage_Barberz",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Hair Attack",
     "phone": "0404960871",
     "address": "Experience the best in hair styling at Hair Attack, Macquarie Park&#x27;s premier salon",
@@ -189,6 +465,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Hair_Attack",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Hair Attack",
+    "phone": "(02) 8964 1444",
+    "address": "2/2 Flinders Rd, North Ryde NSW 2113, Australia",
+    "slug": "hair-attack-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/hair-attack-2/",
+    "business_key": "hair attack|0289641444",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Hair_Attack",
     "uploaded_this_run": false
   },
   {
@@ -202,6 +490,42 @@
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/hair-image-by-julie_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Hair_Image_by_Julie",
     "uploaded_this_run": false
+  },
+  {
+    "business_name": "Hair Image by Julie",
+    "phone": "(02) 9878 4372",
+    "address": "117 North Rd, Ryde NSW 2112, Australia",
+    "slug": "hair-image-by-julie-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/hair-image-by-julie-2/",
+    "business_key": "hair image by julie|0298784372",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/hair-image-by-julie-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/hair-image-by-julie-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Hair_Image_by_Julie",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Imperial Massage Macquarie Centre",
+    "phone": "(02) 9888 5556",
+    "address": "AU NSW North Ryde Cnr Herring Rd& Waterloo Rd Shop 19 B Level 1 Macquarie Centre Nearly K Market, Macquarie Park NSW 2113, Australia",
+    "slug": "imperial-massage-macquarie-centre",
+    "public_url": "https://muhanadbin-hue.github.io/demos/imperial-massage-macquarie-centre/",
+    "business_key": "imperial massage macquarie centre|0298885556",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Imperial_Massage_Macquarie_Centre",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Imperial Massage Macquarie Centre",
+    "phone": "0404960871",
+    "address": "AU NSW North Ryde Cnr Herring Rd&amp; Waterloo Rd Shop 19 B Level 1 Macquarie Centre Nearly K Market, Macquarie Park NSW 2113, Australia",
+    "slug": "imperial-massage-macquarie-centre",
+    "public_url": "https://muhanadbin-hue.github.io/demos/imperial-massage-macquarie-centre/",
+    "business_key": "imperial massage macquarie centre|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.pdf"
   },
   {
     "business_name": "Imperial Style",
@@ -240,6 +564,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "KDA Tiling- All kinds of Tiling.",
+    "phone": "0430 131 392",
+    "address": "20 Angophora Pl, Pennant Hills NSW 2120, Australia",
+    "slug": "kda-tiling-all-kinds-of-tiling-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/kda-tiling-all-kinds-of-tiling-2/",
+    "business_key": "kda tiling- all kinds of tiling.|0430131392",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\KDA_Tiling-_All_kinds_of_Tiling",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Kent Road Auto Service Centre",
     "phone": "0404960871",
     "address": "Trust Kent Road Auto Service Centre for all your vehicle needs",
@@ -252,6 +588,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Kent Road Auto Service Centre",
+    "phone": "(02) 9888 7332",
+    "address": "38 Kent Rd, North Ryde NSW 2113, Australia",
+    "slug": "kent-road-auto-service-centre-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/kent-road-auto-service-centre-2/",
+    "business_key": "kent road auto service centre|0298887332",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/kent-road-auto-service-centre-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kent-road-auto-service-centre-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Kent_Road_Auto_Service_Centre",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Kings Cut Barbershop",
     "phone": "0404960871",
     "address": "Expertly crafted haircuts and exceptional service, right in the heart of Macquarie Park.",
@@ -261,6 +609,54 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Kings_Cut_Barbershop",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Kings Cut Barbershop",
+    "phone": "(02) 9889 7373",
+    "address": "Cnr Waterloo and, Macquarie Shopping Centre, Level 1 upper Herring Rd, North Ryde NSW 2113, Australia",
+    "slug": "kings-cut-barbershop-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/kings-cut-barbershop-2/",
+    "business_key": "kings cut barbershop|0298897373",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Kings_Cut_Barbershop",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Macquarie Sports Physiotherapy",
+    "phone": "(02) 9850 7999",
+    "address": "Gymnasium Rd, Macquarie University NSW 2113, Australia",
+    "slug": "macquarie-sports-physiotherapy",
+    "public_url": "https://muhanadbin-hue.github.io/demos/macquarie-sports-physiotherapy/",
+    "business_key": "macquarie sports physiotherapy|0298507999",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Macquarie_Sports_Physiotherapy",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Macquarie Sports Physiotherapy",
+    "phone": "0404960871",
+    "address": "Gymnasium Rd, Macquarie University NSW 2113, Australia",
+    "slug": "macquarie-sports-physiotherapy",
+    "public_url": "https://muhanadbin-hue.github.io/demos/macquarie-sports-physiotherapy/",
+    "business_key": "macquarie sports physiotherapy|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.pdf"
+  },
+  {
+    "business_name": "Neelgri Cafe . Vegan & Vegetarian",
+    "phone": "0491 222 248",
+    "address": "Unit 4/6 Eden Park Dr, Macquarie Park NSW 2113, Australia",
+    "slug": "neelgri-cafe-vegan-vegetarian-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/neelgri-cafe-vegan-vegetarian-2/",
+    "business_key": "neelgri cafe . vegan & vegetarian|0491222248",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/neelgri-cafe-vegan-vegetarian-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/neelgri-cafe-vegan-vegetarian-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Neelgri_Cafe_Vegan_Vegetarian",
     "uploaded_this_run": false
   },
   {
@@ -288,6 +684,42 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Nicecute-Nail&Eyelash",
+    "phone": "0447 667 125",
+    "address": "5/2 Mooltan Ave, Macquarie Park NSW 2113, Australia",
+    "slug": "nicecute-naileyelash-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/nicecute-naileyelash-2/",
+    "business_key": "nicecute-nail&eyelash|0447667125",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/nicecute-naileyelash-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/nicecute-naileyelash-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Nicecute-NailEyelash",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "NN&#x27;s Beauty And Nails",
+    "phone": "0404960871",
+    "address": "The design, copy, and image treatment are adjusted based on the business category, public details, reviews, and available assets.",
+    "slug": "nns-beauty-and-nails",
+    "public_url": "https://muhanadbin-hue.github.io/demos/nns-beauty-and-nails/",
+    "business_key": "nn&#x27;s beauty and nails|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.pdf"
+  },
+  {
+    "business_name": "NN's Beauty And Nails",
+    "phone": "(02) 9889 4427",
+    "address": "20 Blenheim Rd, North Ryde NSW 2113, Australia",
+    "slug": "nns-beauty-and-nails",
+    "public_url": "https://muhanadbin-hue.github.io/demos/nns-beauty-and-nails/",
+    "business_key": "nn's beauty and nails|0298894427",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\NNs_Beauty_And_Nails",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "North Epping Auto Repair",
     "phone": "0404960871",
     "address": "North Epping Auto Repair: Your trusted partner for all your car needs.",
@@ -300,6 +732,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "North Epping Auto Repair",
+    "phone": "(02) 9876 5383",
+    "address": "11/288 Malton Rd, North Epping NSW 2121, Australia",
+    "slug": "north-epping-auto-repair-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/north-epping-auto-repair-2/",
+    "business_key": "north epping auto repair|0298765383",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/north-epping-auto-repair-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/north-epping-auto-repair-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\North_Epping_Auto_Repair",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "North Ryde Handy Gardener",
     "phone": "0404960871",
     "address": "Reliable, Professional Handyman Solutions for Your Home",
@@ -309,6 +753,30 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\North_Ryde_Handy_Gardener",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "North Ryde Handy Gardener",
+    "phone": "0416 005 291",
+    "address": "Parklands Rd, North Ryde NSW 2113, Australia",
+    "slug": "north-ryde-handy-gardener-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/north-ryde-handy-gardener-2/",
+    "business_key": "north ryde handy gardener|0416005291",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\North_Ryde_Handy_Gardener",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Ocean Nails & Beauty, Macquarie Park(Lachlan's square Village)",
+    "phone": "0415 662 688",
+    "address": "LACHLAN'S SQUARE VILLAGE, 17 Halifax St, Macquarie Park NSW 2113, Australia",
+    "slug": "ocean-nails-beauty-macquarie-parklachlans-square-village-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-2/",
+    "business_key": "ocean nails & beauty, macquarie park(lachlan's square village)|0415662688",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/ocean-nails-beauty-macquarie-parklachlans-square-village-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/ocean-nails-beauty-macquarie-parklachlans-square-village-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Ocean_Nails_Beauty_Macquarie_ParkLachlans_square_Village",
     "uploaded_this_run": false
   },
   {
@@ -348,6 +816,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Perfect Brew Cafe",
+    "phone": "(02) 9889 2946",
+    "address": "16 University Ave, Macquarie Park NSW 2113, Australia",
+    "slug": "perfect-brew-cafe-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/perfect-brew-cafe-2/",
+    "business_key": "perfect brew cafe|0298892946",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/perfect-brew-cafe-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/perfect-brew-cafe-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Perfect_Brew_Cafe",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Pin Stitch Alterations",
     "phone": "0404960871",
     "address": "Trust Pin Stitch for fast, professional services that exceed your expectations.",
@@ -357,6 +837,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/pin-stitch-alterations_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/pin-stitch-alterations_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Pin_Stitch_Alterations",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Pin Stitch Alterations",
+    "phone": "(02) 9870 8033",
+    "address": "Shop 428/197 Herring Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "pin-stitch-alterations-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/pin-stitch-alterations-2/",
+    "business_key": "pin stitch alterations|0298708033",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/pin-stitch-alterations-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/pin-stitch-alterations-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Pin_Stitch_Alterations",
     "uploaded_this_run": false
   },
   {
@@ -372,6 +864,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "SO CAFE",
+    "phone": "(02) 9878 0694",
+    "address": "Shop 4A/33 Waterloo Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "so-cafe-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/so-cafe-2/",
+    "business_key": "so cafe|0298780694",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/so-cafe-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/so-cafe-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\SO_CAFE",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "T19 Nails Studio",
     "phone": "0404960871",
     "address": "Relax and rejuvenate with our expertly trained staff, using only the finest products.",
@@ -381,6 +885,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\T19_Nails_Studio",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "T19 Nails Studio",
+    "phone": "0451 638 639",
+    "address": "211, 19/213 Coxs Rd, North Ryde NSW 2113, Australia",
+    "slug": "t19-nails-studio-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/t19-nails-studio-2/",
+    "business_key": "t19 nails studio|0451638639",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\T19_Nails_Studio",
     "uploaded_this_run": false
   },
   {
@@ -396,6 +912,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "Teco Nail Macquarie",
+    "phone": "(02) 8033 5369",
+    "address": "Macquarie Shopping Centre, Level 3, Next to Cole,Macquarie Park, North Ryde NSW 2113, Australia",
+    "slug": "teco-nail-macquarie-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/teco-nail-macquarie-2/",
+    "business_key": "teco nail macquarie|0280335369",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/teco-nail-macquarie-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/teco-nail-macquarie-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Teco_Nail_Macquarie",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Terry Ryan Automotive Services Pty Ltd",
     "phone": "0404960871",
     "address": "Experience the Terry Ryan difference: friendly, fast, and professional service for your vehicle.",
@@ -405,6 +933,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Terry_Ryan_Automotive_Services_Pty_Ltd",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Terry Ryan Automotive Services Pty Ltd",
+    "phone": "(02) 9888 5198",
+    "address": "118 Coxs Rd, North Ryde NSW 2113, Australia",
+    "slug": "terry-ryan-automotive-services-pty-ltd-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/terry-ryan-automotive-services-pty-ltd-2/",
+    "business_key": "terry ryan automotive services pty ltd|0298885198",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Terry_Ryan_Automotive_Services_Pty_Ltd",
     "uploaded_this_run": false
   },
   {
@@ -420,6 +960,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "The Cove Handyman Services",
+    "phone": "0405 627 798",
+    "address": "510/2 Burley St, Lane Cove North NSW 2066, Australia",
+    "slug": "the-cove-handyman-services-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/the-cove-handyman-services-2/",
+    "business_key": "the cove handyman services|0405627798",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-cove-handyman-services-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-cove-handyman-services-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\The_Cove_Handyman_Services",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "The Hungry Baker",
     "phone": "0404960871",
     "address": "Discover the perfect blend of quality, value and service in Macquarie Park&#x27;s premier cafe",
@@ -429,6 +981,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\The_Hungry_Baker",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "The Hungry Baker",
+    "phone": "0449 936 658",
+    "address": "Shop3/8 Khartoum Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "the-hungry-baker-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/the-hungry-baker-2/",
+    "business_key": "the hungry baker|0449936658",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\The_Hungry_Baker",
     "uploaded_this_run": false
   },
   {
@@ -444,6 +1008,18 @@
     "uploaded_this_run": false
   },
   {
+    "business_name": "The Local Cafe Macquarie Park",
+    "phone": "0414 770 928",
+    "address": "6A/277 Lane Cove Rd, Macquarie Park NSW 2113, Australia",
+    "slug": "the-local-cafe-macquarie-park-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/the-local-cafe-macquarie-park-2/",
+    "business_key": "the local cafe macquarie park|0414770928",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-local-cafe-macquarie-park-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-local-cafe-macquarie-park-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\The_Local_Cafe_Macquarie_Park",
+    "uploaded_this_run": false
+  },
+  {
     "business_name": "Totally Male Barbershop",
     "phone": "0404960871",
     "address": "Expert Barbershop Services for a Fresh, Confident You",
@@ -453,6 +1029,18 @@
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Totally_Male_Barbershop",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Totally Male Barbershop",
+    "phone": "(02) 9567 8341",
+    "address": "Shop T5/19 Halifax St, Macquarie Park NSW 2113, Australia",
+    "slug": "totally-male-barbershop-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/totally-male-barbershop-2/",
+    "business_key": "totally male barbershop|0295678341",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Totally_Male_Barbershop",
     "uploaded_this_run": false
   },
   {
@@ -466,5 +1054,41 @@
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/twin-scissors-barber-shop_card.pdf",
     "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Twin_Scissors_Barber_Shop",
     "uploaded_this_run": false
+  },
+  {
+    "business_name": "Twin Scissors Barber Shop",
+    "phone": "0414 444 042",
+    "address": "211 Coxs Rd, North Ryde NSW 2113, Australia",
+    "slug": "twin-scissors-barber-shop-2",
+    "public_url": "https://muhanadbin-hue.github.io/demos/twin-scissors-barber-shop-2/",
+    "business_key": "twin scissors barber shop|0414444042",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/twin-scissors-barber-shop-2_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/twin-scissors-barber-shop-2_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Twin_Scissors_Barber_Shop",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Weilisi - Remedial Massage & Natural Therapy",
+    "phone": "(02) 8097 3527",
+    "address": "4436A Herring &, Waterloo Rd Level 4- Opposite Time Zone, Entry next to roof top carpark, North Ryde NSW 2113, Australia",
+    "slug": "weilisi-remedial-massage-natural-therapy",
+    "public_url": "https://muhanadbin-hue.github.io/demos/weilisi-remedial-massage-natural-therapy/",
+    "business_key": "weilisi - remedial massage & natural therapy|0280973527",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.pdf",
+    "source_folder": "Leads_Macquarie_Park\\Weilisi_-_Remedial_Massage_Natural_Therapy",
+    "uploaded_this_run": false
+  },
+  {
+    "business_name": "Weilisi - Remedial Massage &amp; Natural Therapy",
+    "phone": "0404960871",
+    "address": "4436A Herring &amp;, Waterloo Rd Level 4- Opposite Time Zone, Entry next to roof top carpark, North Ryde NSW 2113, Australia",
+    "slug": "weilisi-remedial-massage-natural-therapy",
+    "public_url": "https://muhanadbin-hue.github.io/demos/weilisi-remedial-massage-natural-therapy/",
+    "business_key": "weilisi - remedial massage &amp; natural therapy|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.pdf"
   }
 ]
