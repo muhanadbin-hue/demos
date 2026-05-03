@@ -115,6 +115,52 @@
     "visit_order": 5
   },
   {
+    "business_name": "As Usual",
+    "phone": "0437 557 522",
+    "address": "shop 8/101 Waterloo Rd, Macquarie Park NSW 2113, Australia",
+    "category": "cafe",
+    "rating": "",
+    "reviews": "",
+    "maps_url": "https://maps.google.com/?cid=18394419708963375633",
+    "lat": "",
+    "lng": "",
+    "slug": "as-usual",
+    "public_url": "https://muhanadbin-hue.github.io/demos/as-usual/",
+    "business_key": "as usual|0437557522",
+    "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\As_Usual",
+    "source_leads_root": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park",
+    "uploaded_this_run": true,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual_card.pdf",
+    "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\as-usual_card.png",
+    "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\as-usual_card.pdf",
+    "distance_km": "",
+    "visit_order": 6
+  },
+  {
+    "business_name": "Brew & Pour",
+    "phone": "(02) 9887 3198",
+    "address": "11 Talavera Rd, Macquarie Park NSW 2113, Australia",
+    "category": "cafe",
+    "rating": "",
+    "reviews": "",
+    "maps_url": "https://maps.google.com/?cid=7144323960241172641",
+    "lat": "",
+    "lng": "",
+    "slug": "brew-pour",
+    "public_url": "https://muhanadbin-hue.github.io/demos/brew-pour/",
+    "business_key": "brew & pour|0298873198",
+    "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Brew_Pour",
+    "source_leads_root": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park",
+    "uploaded_this_run": true,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour_card.pdf",
+    "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\brew-pour_card.png",
+    "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\brew-pour_card.pdf",
+    "distance_km": "",
+    "visit_order": 7
+  },
+  {
     "business_name": "BaptistCare HopeCleaning",
     "phone": "1300 296 570",
     "address": "Unit 3/157 Balaclava Rd, Macquarie Park NSW 2113, Australia",
@@ -135,7 +181,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\baptistcare-hopecleaning_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\baptistcare-hopecleaning_card.pdf",
     "distance_km": "",
-    "visit_order": 6
+    "visit_order": 8
   },
   {
     "business_name": "Blue Diamond Carwash",
@@ -158,7 +204,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\blue-diamond-carwash_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\blue-diamond-carwash_card.pdf",
     "distance_km": "",
-    "visit_order": 7
+    "visit_order": 9
   },
   {
     "business_name": "The Local Cafe Macquarie Park",
@@ -181,7 +227,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\the-local-cafe-macquarie-park_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\the-local-cafe-macquarie-park_card.pdf",
     "distance_km": "",
-    "visit_order": 8
+    "visit_order": 10
   },
   {
     "business_name": "Dr Richard S Vici DENTAL SURGERY",
@@ -204,7 +250,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\dr-richard-s-vici-dental-surgery_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\dr-richard-s-vici-dental-surgery_card.pdf",
     "distance_km": "",
-    "visit_order": 9
+    "visit_order": 11
   },
   {
     "business_name": "Dreamwood Home Services",
@@ -227,7 +273,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\dreamwood-home-services_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\dreamwood-home-services_card.pdf",
     "distance_km": "",
-    "visit_order": 10
+    "visit_order": 12
   },
   {
     "business_name": "North Ryde Handy Gardener",
@@ -250,7 +296,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\north-ryde-handy-gardener_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\north-ryde-handy-gardener_card.pdf",
     "distance_km": "",
-    "visit_order": 11
+    "visit_order": 13
   },
   {
     "business_name": "The Cove Handyman Services",
@@ -273,7 +319,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\the-cove-handyman-services_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\the-cove-handyman-services_card.pdf",
     "distance_km": "",
-    "visit_order": 12
+    "visit_order": 14
   },
   {
     "business_name": "A.R.M Automotive Mobile Mechanic",
@@ -296,7 +342,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\arm-automotive-mobile-mechanic_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\arm-automotive-mobile-mechanic_card.pdf",
     "distance_km": "",
-    "visit_order": 13
+    "visit_order": 15
   },
   {
     "business_name": "North Epping Auto Repair",
@@ -319,7 +365,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\north-epping-auto-repair_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\north-epping-auto-repair_card.pdf",
     "distance_km": "",
-    "visit_order": 14
+    "visit_order": 16
   },
   {
     "business_name": "Terry Ryan Automotive Services Pty Ltd",
@@ -342,7 +388,53 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\terry-ryan-automotive-services-pty-ltd_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\terry-ryan-automotive-services-pty-ltd_card.pdf",
     "distance_km": "",
-    "visit_order": 15
+    "visit_order": 17
+  },
+  {
+    "business_name": "WITH Painting",
+    "phone": "0431 545 543",
+    "address": "26 Ferntree Pl, Epping NSW 2122, Australia",
+    "category": "painter",
+    "rating": "",
+    "reviews": "",
+    "maps_url": "https://maps.google.com/?cid=15608745031229395177",
+    "lat": "",
+    "lng": "",
+    "slug": "with-painting",
+    "public_url": "https://muhanadbin-hue.github.io/demos/with-painting/",
+    "business_key": "with painting|0431545543",
+    "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\WITH_Painting",
+    "source_leads_root": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park",
+    "uploaded_this_run": true,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/with-painting_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/with-painting_card.pdf",
+    "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\with-painting_card.png",
+    "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\with-painting_card.pdf",
+    "distance_km": "",
+    "visit_order": 18
+  },
+  {
+    "business_name": "KDA Tiling- All Kinds of Tiling.",
+    "phone": "0430 131 392",
+    "address": "20 Angophora Pl, Pennant Hills NSW 2120, Australia",
+    "category": "tiler",
+    "rating": "",
+    "reviews": "",
+    "maps_url": "https://maps.google.com/?cid=472154176354920219",
+    "lat": "",
+    "lng": "",
+    "slug": "kda-tiling-all-kinds-of-tiling",
+    "public_url": "https://muhanadbin-hue.github.io/demos/kda-tiling-all-kinds-of-tiling/",
+    "business_key": "kda tiling- all kinds of tiling.|0430131392",
+    "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\KDA_Tiling-_All_Kinds_of_Tiling",
+    "source_leads_root": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park",
+    "uploaded_this_run": true,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling_card.pdf",
+    "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\kda-tiling-all-kinds-of-tiling_card.png",
+    "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\kda-tiling-all-kinds-of-tiling_card.pdf",
+    "distance_km": "",
+    "visit_order": 19
   },
   {
     "business_name": "DJ Borg Automotive",
