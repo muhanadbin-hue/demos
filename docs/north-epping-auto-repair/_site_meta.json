@@ -1,9 +1,10 @@
 {
   "place_id": "ChIJlVvFGGCmEmsRoJnUrIywFkw",
   "name": "North Epping Auto Repair",
-  "category": "auto repair",
-  "suburb": "mACQUARIE PARK",
+  "category": "mechanic",
+  "suburb": "Macquarie Park",
   "address": "11/288 Malton Rd, North Epping NSW 2121, Australia",
   "phone": "(02) 9876 5383",
-  "maps_url": "https://maps.google.com/?cid=5482763714611681696"
+  "maps_url": "https://maps.google.com/?cid=5482763714611681696",
+  "positive_reviews_count": 5
 }
