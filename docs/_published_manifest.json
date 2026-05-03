@@ -20,8 +20,36 @@
     "business_key": "a.r.m automotive mobile mechanic|0450407160",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/arm-automotive-mobile-mechanic-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/arm-automotive-mobile-mechanic-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\ARM_Automotive_Mobile_Mechanic",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\ARM_Automotive_Mobile_Mechanic",
+    "uploaded_this_run": true,
+    "category": "auto repair",
+    "image_replacements_this_run": 0
+  },
+  {
+    "business_name": "Able Auto Glass Services",
+    "phone": "0418 288 208",
+    "address": "122 Vimiera Rd, Marsfield NSW 2122, Australia",
+    "category": "auto repair",
+    "slug": "able-auto-glass-services",
+    "public_url": "https://muhanadbin-hue.github.io/demos/able-auto-glass-services/",
+    "business_key": "able auto glass services|0418288208",
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/able-auto-glass-services_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/able-auto-glass-services_card.pdf",
+    "source_folder": "Leads_mACQUARIE_PARK\\Able_Auto_Glass_Services",
+    "uploaded_this_run": true,
+    "image_replacements_this_run": 0
+  },
+  {
+    "business_name": "Able Auto Glass Services",
+    "phone": "0404960871",
+    "address": "122 Vimiera Rd, Marsfield NSW 2122, Australia",
+    "slug": "able-auto-glass-services",
+    "public_url": "https://muhanadbin-hue.github.io/demos/able-auto-glass-services/",
+    "business_key": "able auto glass services|0404960871",
+    "source_folder": "",
+    "uploaded_this_run": false,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/able-auto-glass-services_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/able-auto-glass-services_card.pdf"
   },
   {
     "business_name": "All About iBrows",
@@ -32,8 +60,10 @@
     "business_key": "all about ibrows|0410907020",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/all-about-ibrows_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\All_About_iBrows",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\All_About_iBrows",
+    "uploaded_this_run": true,
+    "category": "hair salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "All About iBrows",
@@ -68,8 +98,10 @@
     "business_key": "as usual|0437557522",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/as-usual-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\As_Usual",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\As_Usual",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "BaptistCare HopeCleaning",
@@ -92,8 +124,10 @@
     "business_key": "baptistcare hopecleaning|1300296570",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/baptistcare-hopecleaning-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/baptistcare-hopecleaning-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\BaptistCare_HopeCleaning",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\BaptistCare_HopeCleaning",
+    "uploaded_this_run": true,
+    "category": "cleaner",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "BATCH ZKK Cafe Macquarie",
@@ -128,8 +162,10 @@
     "business_key": "bliss nails & beauty bar macquarie centre|0278136183",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/bliss-nails-beauty-bar-macquarie-centre-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Bliss_Nails_Beauty_Bar_Macquarie_Centre",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Bliss_Nails_Beauty_Bar_Macquarie_Centre",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Bliss Nails &amp; Beauty Bar Macquarie Centre",
@@ -152,8 +188,10 @@
     "business_key": "blue diamond carwash|0413469567",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Blue_Diamond_Carwash",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Blue_Diamond_Carwash",
+    "uploaded_this_run": true,
+    "category": "cleaner",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Blue Diamond Carwash",
@@ -176,8 +214,10 @@
     "business_key": "brew & pour|0298873198",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/brew-pour-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Brew_Pour",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Brew_Pour",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Brew &amp; Pour",
@@ -236,8 +276,10 @@
     "business_key": "chew babe pet grooming cafe|0481177734",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/chew-babe-pet-grooming-cafe-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Chew_Babe_Pet_Grooming_Cafe",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Chew_Babe_Pet_Grooming_Cafe",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "CURLi by Lilian",
@@ -260,8 +302,10 @@
     "business_key": "curli by lilian|0431146661",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/curli-by-lilian-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/curli-by-lilian-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\CURLi_by_Lilian",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\CURLi_by_Lilian",
+    "uploaded_this_run": true,
+    "category": "barber",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Dante&#x27;s Espresso Bar",
@@ -284,8 +328,10 @@
     "business_key": "dante's espresso bar|0404960871",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/dantes-espresso-bar-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dantes-espresso-bar-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Dantes_Espresso_Bar",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Dantes_Espresso_Bar",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Deux Cafe",
@@ -296,8 +342,10 @@
     "business_key": "deux cafe|0451453899",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/deux-cafe_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Deux_Cafe",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Deux_Cafe",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Deux Cafe",
@@ -356,8 +404,10 @@
     "business_key": "dreamwood home services|0416790414",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/dreamwood-home-services-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/dreamwood-home-services-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Dreamwood_Home_Services",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Dreamwood_Home_Services",
+    "uploaded_this_run": true,
+    "category": "handyman",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Espresso 7ty8",
@@ -380,8 +430,10 @@
     "business_key": "espresso 7ty8|0298897557",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/espresso-7ty8-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/espresso-7ty8-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Espresso_7ty8",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Espresso_7ty8",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Eyelushes & Brows",
@@ -392,8 +444,10 @@
     "business_key": "eyelushes & brows|0481207668",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/eyelushes-brows_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Eyelushes_Brows",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Eyelushes_Brows",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Eyelushes &amp; Brows",
@@ -428,8 +482,10 @@
     "business_key": "flame cafe north ryde|0298885286",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/flame-cafe-north-ryde-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Flame_Cafe_North_Ryde",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Flame_Cafe_North_Ryde",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Garage Barberz",
@@ -452,8 +508,10 @@
     "business_key": "garage barberz|0435415215",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/garage-barberz-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/garage-barberz-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Garage_Barberz",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Garage_Barberz",
+    "uploaded_this_run": true,
+    "category": "barber",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Hair Attack",
@@ -476,8 +534,10 @@
     "business_key": "hair attack|0289641444",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/hair-attack-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Hair_Attack",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Hair_Attack",
+    "uploaded_this_run": true,
+    "category": "hair salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Hair Image by Julie",
@@ -512,8 +572,10 @@
     "business_key": "imperial massage macquarie centre|0298885556",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/imperial-massage-macquarie-centre_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Imperial_Massage_Macquarie_Centre",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Imperial_Massage_Macquarie_Centre",
+    "uploaded_this_run": true,
+    "category": "physiotherapist",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Imperial Massage Macquarie Centre",
@@ -564,7 +626,7 @@
     "uploaded_this_run": false
   },
   {
-    "business_name": "KDA Tiling- All kinds of Tiling.",
+    "business_name": "KDA Tiling- All Kinds of Tiling.",
     "phone": "0430 131 392",
     "address": "20 Angophora Pl, Pennant Hills NSW 2120, Australia",
     "slug": "kda-tiling-all-kinds-of-tiling-2",
@@ -572,8 +634,10 @@
     "business_key": "kda tiling- all kinds of tiling.|0430131392",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kda-tiling-all-kinds-of-tiling-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\KDA_Tiling-_All_kinds_of_Tiling",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\KDA_Tiling-_All_Kinds_of_Tiling",
+    "uploaded_this_run": true,
+    "category": "tiler",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Kent Road Auto Service Centre",
@@ -596,8 +660,10 @@
     "business_key": "kent road auto service centre|0298887332",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/kent-road-auto-service-centre-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kent-road-auto-service-centre-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Kent_Road_Auto_Service_Centre",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Kent_Road_Auto_Service_Centre",
+    "uploaded_this_run": true,
+    "category": "auto repair",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Kings Cut Barbershop",
@@ -620,8 +686,10 @@
     "business_key": "kings cut barbershop|0298897373",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/kings-cut-barbershop-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Kings_Cut_Barbershop",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Kings_Cut_Barbershop",
+    "uploaded_this_run": true,
+    "category": "barber",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Macquarie Sports Physiotherapy",
@@ -632,8 +700,10 @@
     "business_key": "macquarie sports physiotherapy|0298507999",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/macquarie-sports-physiotherapy_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Macquarie_Sports_Physiotherapy",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Macquarie_Sports_Physiotherapy",
+    "uploaded_this_run": true,
+    "category": "physiotherapist",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Macquarie Sports Physiotherapy",
@@ -656,8 +726,10 @@
     "business_key": "neelgri cafe . vegan & vegetarian|0491222248",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/neelgri-cafe-vegan-vegetarian-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/neelgri-cafe-vegan-vegetarian-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Neelgri_Cafe_Vegan_Vegetarian",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Neelgri_Cafe_Vegan_Vegetarian",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Neelgri Cafe . Vegan &amp; Vegetarian",
@@ -692,8 +764,10 @@
     "business_key": "nicecute-nail&eyelash|0447667125",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/nicecute-naileyelash-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/nicecute-naileyelash-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Nicecute-NailEyelash",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Nicecute-NailEyelash",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "NN&#x27;s Beauty And Nails",
@@ -716,8 +790,10 @@
     "business_key": "nn's beauty and nails|0298894427",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/nns-beauty-and-nails_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\NNs_Beauty_And_Nails",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\NNs_Beauty_And_Nails",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "North Epping Auto Repair",
@@ -740,8 +816,10 @@
     "business_key": "north epping auto repair|0298765383",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/north-epping-auto-repair-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/north-epping-auto-repair-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\North_Epping_Auto_Repair",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\North_Epping_Auto_Repair",
+    "uploaded_this_run": true,
+    "category": "auto repair",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "North Ryde Handy Gardener",
@@ -764,8 +842,10 @@
     "business_key": "north ryde handy gardener|0416005291",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/north-ryde-handy-gardener-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\North_Ryde_Handy_Gardener",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\North_Ryde_Handy_Gardener",
+    "uploaded_this_run": true,
+    "category": "handyman",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Ocean Nails & Beauty, Macquarie Park(Lachlan's square Village)",
@@ -776,8 +856,10 @@
     "business_key": "ocean nails & beauty, macquarie park(lachlan's square village)|0415662688",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/ocean-nails-beauty-macquarie-parklachlans-square-village-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/ocean-nails-beauty-macquarie-parklachlans-square-village-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Ocean_Nails_Beauty_Macquarie_ParkLachlans_square_Village",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Ocean_Nails_Beauty_Macquarie_ParkLachlans_square_Village",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Ocean Nails &amp; Beauty, Macquarie Park(Lachlan&#x27;s square Village)",
@@ -824,8 +906,10 @@
     "business_key": "perfect brew cafe|0298892946",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/perfect-brew-cafe-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/perfect-brew-cafe-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Perfect_Brew_Cafe",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Perfect_Brew_Cafe",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Pin Stitch Alterations",
@@ -872,8 +956,10 @@
     "business_key": "so cafe|0298780694",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/so-cafe-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/so-cafe-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\SO_CAFE",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\SO_CAFE",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "T19 Nails Studio",
@@ -896,8 +982,10 @@
     "business_key": "t19 nails studio|0451638639",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/t19-nails-studio-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\T19_Nails_Studio",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\T19_Nails_Studio",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Teco Nail Macquarie",
@@ -920,8 +1008,10 @@
     "business_key": "teco nail macquarie|0280335369",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/teco-nail-macquarie-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/teco-nail-macquarie-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Teco_Nail_Macquarie",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Teco_Nail_Macquarie",
+    "uploaded_this_run": true,
+    "category": "nail salon",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Terry Ryan Automotive Services Pty Ltd",
@@ -944,8 +1034,10 @@
     "business_key": "terry ryan automotive services pty ltd|0298885198",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/terry-ryan-automotive-services-pty-ltd-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Terry_Ryan_Automotive_Services_Pty_Ltd",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Terry_Ryan_Automotive_Services_Pty_Ltd",
+    "uploaded_this_run": true,
+    "category": "auto repair",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "The Cove Handyman Services",
@@ -968,8 +1060,10 @@
     "business_key": "the cove handyman services|0405627798",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-cove-handyman-services-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-cove-handyman-services-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\The_Cove_Handyman_Services",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\The_Cove_Handyman_Services",
+    "uploaded_this_run": true,
+    "category": "handyman",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "The Hungry Baker",
@@ -992,8 +1086,10 @@
     "business_key": "the hungry baker|0449936658",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-hungry-baker-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\The_Hungry_Baker",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\The_Hungry_Baker",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "The Local Cafe Macquarie Park",
@@ -1016,8 +1112,10 @@
     "business_key": "the local cafe macquarie park|0414770928",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/the-local-cafe-macquarie-park-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/the-local-cafe-macquarie-park-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\The_Local_Cafe_Macquarie_Park",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\The_Local_Cafe_Macquarie_Park",
+    "uploaded_this_run": true,
+    "category": "cafe",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Totally Male Barbershop",
@@ -1040,8 +1138,10 @@
     "business_key": "totally male barbershop|0295678341",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/totally-male-barbershop-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Totally_Male_Barbershop",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Totally_Male_Barbershop",
+    "uploaded_this_run": true,
+    "category": "barber",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Twin Scissors Barber Shop",
@@ -1064,8 +1164,10 @@
     "business_key": "twin scissors barber shop|0414444042",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/twin-scissors-barber-shop-2_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/twin-scissors-barber-shop-2_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Twin_Scissors_Barber_Shop",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Twin_Scissors_Barber_Shop",
+    "uploaded_this_run": true,
+    "category": "barber",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Weilisi - Remedial Massage & Natural Therapy",
@@ -1076,8 +1178,10 @@
     "business_key": "weilisi - remedial massage & natural therapy|0280973527",
     "card_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.png",
     "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/weilisi-remedial-massage-natural-therapy_card.pdf",
-    "source_folder": "Leads_Macquarie_Park\\Weilisi_-_Remedial_Massage_Natural_Therapy",
-    "uploaded_this_run": false
+    "source_folder": "Leads_mACQUARIE_PARK\\Weilisi_-_Remedial_Massage_Natural_Therapy",
+    "uploaded_this_run": true,
+    "category": "physiotherapist",
+    "image_replacements_this_run": 0
   },
   {
     "business_name": "Weilisi - Remedial Massage &amp; Natural Therapy",
