@@ -138,6 +138,29 @@
     "visit_order": 6
   },
   {
+    "business_name": "Blue Diamond Carwash",
+    "phone": "0413 469 567",
+    "address": "400 Lane Cove Rd, Macquarie Park NSW 2113, Australia",
+    "category": "cleaner",
+    "rating": "",
+    "reviews": "",
+    "maps_url": "https://maps.google.com/?cid=11787422018364465052",
+    "lat": "",
+    "lng": "",
+    "slug": "blue-diamond-carwash",
+    "public_url": "https://muhanadbin-hue.github.io/demos/blue-diamond-carwash/",
+    "business_key": "blue diamond carwash|0413469567",
+    "source_folder": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\Blue_Diamond_Carwash",
+    "source_leads_root": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park",
+    "uploaded_this_run": true,
+    "card_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.png",
+    "card_pdf_url": "https://muhanadbin-hue.github.io/demos/cards/blue-diamond-carwash_card.pdf",
+    "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\blue-diamond-carwash_card.png",
+    "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\blue-diamond-carwash_card.pdf",
+    "distance_km": "",
+    "visit_order": 7
+  },
+  {
     "business_name": "Dr Richard S Vici DENTAL SURGERY",
     "phone": "(02) 9888 5662",
     "address": "1/134 Coxs Rd, North Ryde NSW 2113, Australia",
@@ -158,7 +181,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\dr-richard-s-vici-dental-surgery_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\dr-richard-s-vici-dental-surgery_card.pdf",
     "distance_km": "",
-    "visit_order": 7
+    "visit_order": 8
   },
   {
     "business_name": "Dreamwood Home Services",
@@ -181,7 +204,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\dreamwood-home-services_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\dreamwood-home-services_card.pdf",
     "distance_km": "",
-    "visit_order": 8
+    "visit_order": 9
   },
   {
     "business_name": "North Ryde Handy Gardener",
@@ -204,7 +227,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\north-ryde-handy-gardener_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\north-ryde-handy-gardener_card.pdf",
     "distance_km": "",
-    "visit_order": 9
+    "visit_order": 10
   },
   {
     "business_name": "The Cove Handyman Services",
@@ -227,7 +250,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\the-cove-handyman-services_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\the-cove-handyman-services_card.pdf",
     "distance_km": "",
-    "visit_order": 10
+    "visit_order": 11
   },
   {
     "business_name": "A.R.M Automotive Mobile Mechanic",
@@ -250,7 +273,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\arm-automotive-mobile-mechanic_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\arm-automotive-mobile-mechanic_card.pdf",
     "distance_km": "",
-    "visit_order": 11
+    "visit_order": 12
   },
   {
     "business_name": "North Epping Auto Repair",
@@ -273,7 +296,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\north-epping-auto-repair_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\north-epping-auto-repair_card.pdf",
     "distance_km": "",
-    "visit_order": 12
+    "visit_order": 13
   },
   {
     "business_name": "Terry Ryan Automotive Services Pty Ltd",
@@ -296,7 +319,7 @@
     "card_local_png": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\png\\terry-ryan-automotive-services-pty-ltd_card.png",
     "card_local_pdf": "C:\\Users\\User\\Desktop\\Website\\Leads_Macquarie_Park\\_card_exports\\pdf\\terry-ryan-automotive-services-pty-ltd_card.pdf",
     "distance_km": "",
-    "visit_order": 13
+    "visit_order": 14
   },
   {
     "business_name": "DJ Borg Automotive",
