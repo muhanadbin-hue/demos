@@ -20,11 +20,9 @@
     input { width:100%; box-sizing:border-box; border:1px solid #cbd5e1; border-radius:14px; padding:13px 14px; font-size:15px; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     .actions { display:flex; flex-direction:column; gap:12px; margin-top:22px; }
-    button, a.button { display:flex; justify-content:center; align-items:center; text-align:center; border:0; border-radius:999px; padding:14px 18px; font-weight:900; cursor:pointer; text-decoration:none; font-size:15px; }
+    button { display:flex; justify-content:center; align-items:center; text-align:center; border:0; border-radius:999px; padding:14px 18px; font-weight:900; cursor:pointer; text-decoration:none; font-size:15px; }
     .primary { background:#0f172a; color:#fff; }
-    .secondary { background:#e2e8f0; color:#0f172a; }
     .muted { color:#64748b; font-size:12px; margin-top:14px; }
-    #continuePreview { display:none; }
     @media (max-width: 640px) { .grid { grid-template-columns:1fr; } h1 { font-size:25px; } .head,.body { padding:22px; } }
   </style>
 </head>
@@ -41,79 +39,55 @@
         <li>The purpose is to show how a professional landing page could look if the business chooses to claim or customise it.</li>
         <li>The owner can claim, edit, or request removal of this preview at any time.</li>
       </ul>
-      <div class="notice">Please review the details below. Your phone and email are prefilled where publicly available. Leave the name blank or complete it if you are the owner or authorised representative.</div>
+      <div class="notice">Please review the details below. Phone and email are pre-filled where publicly available. Name is optional and can be left blank.</div>
 
-      <label for="ownerName">Your name</label>
-      <input id="ownerName" autocomplete="name" placeholder="Optional — owner / authorised representative name">
+      <form method="POST" action="https://formsubmit.co/websitesconsent@gmail.com" id="consentForm">
+        <input type="hidden" name="_subject" value="Owner acknowledgement - Ocean Nails &amp; Beauty, Macquarie Park(Lachlan's square Village)">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-96f1724a/?owner_ack=1">
+        <input type="hidden" name="Business" value="Ocean Nails &amp; Beauty, Macquarie Park(Lachlan's square Village)">
+        <input type="hidden" name="Preview URL" value="https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-96f1724a/">
+        <input type="hidden" name="Acknowledgement" value="The submitter acknowledged this is an independent concept preview, not an official website unless approved by the business owner, and that public information/images may be used to demonstrate the design.">
+        <input type="hidden" name="Submitted from" value="QR acknowledgement page">
+        <input type="hidden" name="Submitted at" id="submittedAt" value="">
 
-      <div class="grid">
-        <div>
-          <label for="ownerPhone">Phone</label>
-          <input id="ownerPhone" autocomplete="tel" value="0415 662 688" placeholder="Business phone">
+        <label for="ownerName">Your name</label>
+        <input id="ownerName" name="Name" autocomplete="name" placeholder="Optional — owner / authorised representative name">
+
+        <div class="grid">
+          <div>
+            <label for="ownerPhone">Phone</label>
+            <input id="ownerPhone" name="Phone" autocomplete="tel" value="0415 662 688" placeholder="Business phone">
+          </div>
+          <div>
+            <label for="ownerEmail">Email</label>
+            <input id="ownerEmail" name="Email" autocomplete="email" value="" placeholder="Business email if available">
+          </div>
         </div>
-        <div>
-          <label for="ownerEmail">Email</label>
-          <input id="ownerEmail" autocomplete="email" value="" placeholder="Business email if available">
+
+        <label for="ownerRole">Role</label>
+        <input id="ownerRole" name="Role" autocomplete="organization-title" placeholder="Owner, manager, authorised representative">
+
+        <div class="actions">
+          <button class="primary" id="submitConsent" type="submit">Consent to view the concept plan</button>
         </div>
-      </div>
+      </form>
 
-      <label for="ownerRole">Role</label>
-      <input id="ownerRole" autocomplete="organization-title" placeholder="Owner, manager, authorised representative">
-
-      <div class="actions">
-        <button class="primary" id="openConsentEmail" type="button">Consent to view the concept plan</button>
-        <a class="button secondary" id="continuePreview" href="https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-96f1724a/?owner_ack=1">Continue to website preview</a>
-      </div>
-      <div class="muted">This acknowledgement helps keep the concept preview clear, transparent, and easy to claim, edit, or remove.</div>
+      <div class="muted">After submitting, you will be taken to the concept preview.</div>
     </div>
   </main>
 
   <script>
   (function() {
-    var businessName = "Ocean Nails & Beauty, Macquarie Park(Lachlan's square Village)";
-    var previewUrl = "https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-96f1724a/";
-    var consentEmail = "websitesconsent@gmail.com";
-    var continueButton = document.getElementById('continuePreview');
-    var storageKey;
-    try {
-      storageKey = 'owner_consent_ack_' + new URL(previewUrl).pathname;
-    } catch (e) {
-      storageKey = 'owner_consent_ack_' + location.pathname.replace('/consent.html', '/');
-    }
-
-    function value(id) {
-      var el = document.getElementById(id);
-      return el ? el.value.trim() : '';
-    }
-
-    document.getElementById('openConsentEmail').addEventListener('click', function() {
-      var ownerName = value('ownerName');
-      var ownerRole = value('ownerRole');
-      var ownerPhone = value('ownerPhone');
-      var ownerEmail = value('ownerEmail');
-      var subject = 'Owner acknowledgement - ' + businessName;
-      var body = [
-        'Business: ' + businessName,
-        'Preview URL: ' + previewUrl,
-        'Date/time: ' + new Date().toLocaleString(),
-        '',
-        'Owner / authorised representative name: ' + ownerName,
-        'Role: ' + ownerRole,
-        'Phone: ' + ownerPhone,
-        'Email: ' + ownerEmail,
-        '',
-        'Acknowledgement:',
-        'I acknowledge this page is an independent concept preview and is not the official website unless approved by the business owner.',
-        'I acknowledge the preview may use publicly available business information and public images to demonstrate the proposed design.',
-        'I understand I can request to claim, edit, or remove this preview.',
-        '',
-        'Submitted from the QR acknowledgement page.'
-      ].join('
-');
-
-      localStorage.setItem(storageKey, 'email-opened-from-consent-gate-' + new Date().toISOString());
-      continueButton.style.display = 'flex';
-      window.location.href = 'mailto:' + consentEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    var form = document.getElementById('consentForm');
+    var submittedAt = document.getElementById('submittedAt');
+    form.addEventListener('submit', function() {
+      if (submittedAt) submittedAt.value = new Date().toISOString();
+      try {
+        var storageKey = 'owner_consent_ack_' + new URL("https://muhanadbin-hue.github.io/demos/ocean-nails-beauty-macquarie-parklachlans-square-village-96f1724a/").pathname;
+        localStorage.setItem(storageKey, 'submitted-from-consent-gate-' + new Date().toISOString());
+      } catch(e) {}
     });
   })();
   </script>
