@@ -72,7 +72,7 @@
 
       <iframe name="consentFrame" id="consentFrame" class="hidden"></iframe>
       <div class="status" id="statusText"></div>
-      <div class='debug-warn' id='endpointWarn'>Automatic consent email is not configured yet. The page will still open the preview.</div>
+      
       <div class="debug-panel" id="debugPanel"></div>
       <div class="muted">After acknowledgement, you will be taken to the concept preview.</div>
     </div>
@@ -80,7 +80,7 @@
 
   <script>
   (function() {
-    var webhookEndpoint = "";
+    var webhookEndpoint = "https://script.google.com/macros/s/AKfycbzqGyfeKxwdmwM0B30PigVK9ULJUABx45MIwDfcQjlbOErbWkIrbTU5pTTacEpy6KEACg/exec";
     var businessName = "All About iBrows";
     var previewUrl = "https://muhanadbin-hue.github.io/demos/all-about-ibrows-71b3559b/";
     var nextUrl = "https://muhanadbin-hue.github.io/demos/all-about-ibrows-71b3559b/?owner_ack=1";
