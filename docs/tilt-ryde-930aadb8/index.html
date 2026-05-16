@@ -326,6 +326,10 @@ The southern style chicken burger was one of my highlights! It was very crispy a
   if (params.get('consent_reset') === '1') {
     localStorage.removeItem(storageKey);
   }
+  if (params.get('owner_ack') === '1') {
+    localStorage.setItem(storageKey, 'acknowledged-from-consent-gate-' + new Date().toISOString());
+    return;
+  }
   if (params.get('preview_admin') === '1') {
     return;
   }

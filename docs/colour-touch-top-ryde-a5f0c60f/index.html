@@ -320,6 +320,10 @@ They left my hair looking and feeling amazing, would 100% recommend getting your
   if (params.get('consent_reset') === '1') {
     localStorage.removeItem(storageKey);
   }
+  if (params.get('owner_ack') === '1') {
+    localStorage.setItem(storageKey, 'acknowledged-from-consent-gate-' + new Date().toISOString());
+    return;
+  }
   if (params.get('preview_admin') === '1') {
     return;
   }

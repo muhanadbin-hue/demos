@@ -325,6 +325,10 @@ What makes this place stand out is the split menu between ”</p>
   if (params.get('consent_reset') === '1') {
     localStorage.removeItem(storageKey);
   }
+  if (params.get('owner_ack') === '1') {
+    localStorage.setItem(storageKey, 'acknowledged-from-consent-gate-' + new Date().toISOString());
+    return;
+  }
   if (params.get('preview_admin') === '1') {
     return;
   }

@@ -354,6 +354,10 @@ Their coffee and Mont Blanc was great too. Can&#x27;t wait to try the rest of th
   if (params.get('consent_reset') === '1') {
     localStorage.removeItem(storageKey);
   }
+  if (params.get('owner_ack') === '1') {
+    localStorage.setItem(storageKey, 'acknowledged-from-consent-gate-' + new Date().toISOString());
+    return;
+  }
   if (params.get('preview_admin') === '1') {
     return;
   }

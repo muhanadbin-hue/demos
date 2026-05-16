@@ -330,6 +330,10 @@ Highly recommended why go into the big shopping mall where it&#x27;s busy and no
   if (params.get('consent_reset') === '1') {
     localStorage.removeItem(storageKey);
   }
+  if (params.get('owner_ack') === '1') {
+    localStorage.setItem(storageKey, 'acknowledged-from-consent-gate-' + new Date().toISOString());
+    return;
+  }
   if (params.get('preview_admin') === '1') {
     return;
   }
