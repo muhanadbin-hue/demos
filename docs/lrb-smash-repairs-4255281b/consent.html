@@ -145,24 +145,15 @@
       try {
         if (webhookEndpoint) {
           await submitToWebhook(payload);
-          markAcknowledged();
-          statusText.textContent = 'Acknowledgement recorded. Opening preview...';
-          window.location.href = nextUrl;
-        } else {
-          markAcknowledged();
-          statusText.textContent = 'Please send the pre-filled acknowledgement email, then continue to the preview.';
-          window.location.href = buildMailto(payload);
-          continueLink.href = nextUrl;
-          continueLink.classList.remove('hidden');
-          button.disabled = false;
         }
-      } catch (e) {
         markAcknowledged();
-        statusText.textContent = 'Could not auto-save acknowledgement. Please send the pre-filled email, then continue.';
-        window.location.href = buildMailto(payload);
-        continueLink.href = nextUrl;
-        continueLink.classList.remove('hidden');
-        button.disabled = false;
+        statusText.textContent = 'Acknowledgement accepted. Opening preview...';
+        window.location.href = nextUrl;
+      } catch (e) {
+        // Do not block the owner if the optional webhook/email capture fails.
+        markAcknowledged();
+        statusText.textContent = 'Acknowledgement accepted. Opening preview...';
+        window.location.href = nextUrl;
       }
     });
   })();
