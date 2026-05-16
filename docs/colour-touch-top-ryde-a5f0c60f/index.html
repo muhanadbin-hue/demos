@@ -306,7 +306,7 @@ They left my hair looking and feeling amazing, would 100% recommend getting your
         <button type="button" class="oc-primary" id="oc-send">I am authorised - open consent email</button>
         <button type="button" class="oc-secondary" id="oc-preview">I am only previewing / not the owner</button>
       </div>
-      <div class="oc-small">Internal/admin bypass: add <code>?preview_admin=1</code> to the URL on your own device.</div>
+      <div class="oc-small">Internal/admin bypass: add <code>?preview_admin=1</code>. To test the popup again, add <code>?consent_reset=1</code>.</div>
     </div>
   </div>
 </div>
@@ -317,8 +317,10 @@ They left my hair looking and feeling amazing, would 100% recommend getting your
   var consentEmail = "websitesconsent@gmail.com";
   var storageKey = 'owner_consent_ack_' + location.pathname;
   var params = new URLSearchParams(location.search);
+  if (params.get('consent_reset') === '1') {
+    localStorage.removeItem(storageKey);
+  }
   if (params.get('preview_admin') === '1') {
-    localStorage.setItem(storageKey, 'admin-bypass');
     return;
   }
   if (localStorage.getItem(storageKey)) return;
