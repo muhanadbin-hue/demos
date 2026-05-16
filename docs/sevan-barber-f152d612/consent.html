@@ -20,9 +20,12 @@
     input { width:100%; box-sizing:border-box; border:1px solid #cbd5e1; border-radius:14px; padding:13px 14px; font-size:15px; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     .actions { display:flex; flex-direction:column; gap:12px; margin-top:22px; }
-    button { display:flex; justify-content:center; align-items:center; text-align:center; border:0; border-radius:999px; padding:14px 18px; font-weight:900; cursor:pointer; text-decoration:none; font-size:15px; }
+    button, .continue-link { display:flex; justify-content:center; align-items:center; text-align:center; border:0; border-radius:999px; padding:14px 18px; font-weight:900; cursor:pointer; text-decoration:none; font-size:15px; }
     .primary { background:#0f172a; color:#fff; }
+    .secondary { background:#e2e8f0; color:#0f172a; }
     .muted { color:#64748b; font-size:12px; margin-top:14px; }
+    .hidden { display:none !important; }
+    .status { margin-top:14px; color:#334155; font-size:14px; line-height:1.5; }
     @media (max-width: 640px) { .grid { grid-template-columns:1fr; } h1 { font-size:25px; } .head,.body { padding:22px; } }
   </style>
 </head>
@@ -41,53 +44,126 @@
       </ul>
       <div class="notice">Please review the details below. Phone and email are pre-filled where publicly available. Name is optional and can be left blank.</div>
 
-      <form method="POST" action="https://formsubmit.co/websitesconsent@gmail.com" id="consentForm">
-        <input type="hidden" name="_subject" value="Owner acknowledgement - Sevan Barber">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://muhanadbin-hue.github.io/demos/sevan-barber-f152d612/?owner_ack=1">
-        <input type="hidden" name="Business" value="Sevan Barber">
-        <input type="hidden" name="Preview URL" value="https://muhanadbin-hue.github.io/demos/sevan-barber-f152d612/">
-        <input type="hidden" name="Acknowledgement" value="The submitter acknowledged this is an independent concept preview, not an official website unless approved by the business owner, and that public information/images may be used to demonstrate the design.">
-        <input type="hidden" name="Submitted from" value="QR acknowledgement page">
-        <input type="hidden" name="Submitted at" id="submittedAt" value="">
-
+      <form id="consentForm">
         <label for="ownerName">Your name</label>
-        <input id="ownerName" name="Name" autocomplete="name" placeholder="Optional — owner / authorised representative name">
+        <input id="ownerName" name="name" autocomplete="name" placeholder="Optional — owner / authorised representative name">
 
         <div class="grid">
           <div>
             <label for="ownerPhone">Phone</label>
-            <input id="ownerPhone" name="Phone" autocomplete="tel" value="0417 020 502" placeholder="Business phone">
+            <input id="ownerPhone" name="phone" autocomplete="tel" value="0417 020 502" placeholder="Business phone">
           </div>
           <div>
             <label for="ownerEmail">Email</label>
-            <input id="ownerEmail" name="Email" autocomplete="email" value="" placeholder="Business email if available">
+            <input id="ownerEmail" name="email" autocomplete="email" value="" placeholder="Business email if available">
           </div>
         </div>
 
         <label for="ownerRole">Role</label>
-        <input id="ownerRole" name="Role" autocomplete="organization-title" placeholder="Owner, manager, authorised representative">
+        <input id="ownerRole" name="role" autocomplete="organization-title" placeholder="Owner, manager, authorised representative">
 
         <div class="actions">
           <button class="primary" id="submitConsent" type="submit">Consent to view the concept plan</button>
+          <a class="continue-link secondary hidden" id="continueLink" href="#">Continue to website preview</a>
         </div>
       </form>
 
-      <div class="muted">After submitting, you will be taken to the concept preview.</div>
+      <div class="status" id="statusText"></div>
+      <div class="muted">After acknowledgement, you will be taken to the concept preview.</div>
     </div>
   </main>
 
   <script>
   (function() {
+    var webhookEndpoint = "";
+    var consentEmail = "websitesconsent@gmail.com";
+    var businessName = "Sevan Barber";
+    var previewUrl = "https://muhanadbin-hue.github.io/demos/sevan-barber-f152d612/";
+    var nextUrl = "https://muhanadbin-hue.github.io/demos/sevan-barber-f152d612/?owner_ack=1";
+
     var form = document.getElementById('consentForm');
-    var submittedAt = document.getElementById('submittedAt');
-    form.addEventListener('submit', function() {
-      if (submittedAt) submittedAt.value = new Date().toISOString();
+    var button = document.getElementById('submitConsent');
+    var continueLink = document.getElementById('continueLink');
+    var statusText = document.getElementById('statusText');
+
+    function getValue(id) {
+      var el = document.getElementById(id);
+      return el ? (el.value || '').trim() : '';
+    }
+
+    function markAcknowledged() {
       try {
-        var storageKey = 'owner_consent_ack_' + new URL("https://muhanadbin-hue.github.io/demos/sevan-barber-f152d612/").pathname;
-        localStorage.setItem(storageKey, 'submitted-from-consent-gate-' + new Date().toISOString());
+        var storageKey = 'owner_consent_ack_' + new URL(previewUrl).pathname;
+        localStorage.setItem(storageKey, 'acknowledged-' + new Date().toISOString());
       } catch(e) {}
+    }
+
+    function buildPayload() {
+      return {
+        business: businessName,
+        preview_url: previewUrl,
+        name: getValue('ownerName'),
+        phone: getValue('ownerPhone'),
+        email: getValue('ownerEmail'),
+        role: getValue('ownerRole'),
+        acknowledgement: 'Acknowledged independent concept preview, not official unless approved by the business owner, using public information/images for demonstration.',
+        submitted_at: new Date().toISOString(),
+        source: 'QR consent gate'
+      };
+    }
+
+    function buildMailto(payload) {
+      var subject = 'Owner acknowledgement - ' + payload.business;
+      var body = [
+        'Owner acknowledgement for: ' + payload.business,
+        '',
+        'Name: ' + (payload.name || ''),
+        'Role: ' + (payload.role || ''),
+        'Phone: ' + (payload.phone || ''),
+        'Email: ' + (payload.email || ''),
+        'Preview URL: ' + payload.preview_url,
+        'Submitted at: ' + payload.submitted_at,
+        '',
+        payload.acknowledgement
+      ].join('
+');
+      return 'mailto:' + encodeURIComponent(consentEmail) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    async function submitToWebhook(payload) {
+      var data = new FormData();
+      Object.keys(payload).forEach(function(key) { data.append(key, payload[key]); });
+      await fetch(webhookEndpoint, { method: 'POST', body: data, mode: 'no-cors' });
+    }
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      var payload = buildPayload();
+      button.disabled = true;
+      statusText.textContent = 'Saving acknowledgement...';
+
+      try {
+        if (webhookEndpoint) {
+          await submitToWebhook(payload);
+          markAcknowledged();
+          statusText.textContent = 'Acknowledgement recorded. Opening preview...';
+          window.location.href = nextUrl;
+        } else {
+          markAcknowledged();
+          statusText.textContent = 'Please send the pre-filled acknowledgement email, then continue to the preview.';
+          window.location.href = buildMailto(payload);
+          continueLink.href = nextUrl;
+          continueLink.classList.remove('hidden');
+          button.disabled = false;
+        }
+      } catch (e) {
+        markAcknowledged();
+        statusText.textContent = 'Could not auto-save acknowledgement. Please send the pre-filled email, then continue.';
+        window.location.href = buildMailto(payload);
+        continueLink.href = nextUrl;
+        continueLink.classList.remove('hidden');
+        button.disabled = false;
+      }
     });
   })();
   </script>
