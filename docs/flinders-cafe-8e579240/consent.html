@@ -26,6 +26,8 @@
     .muted { color:#64748b; font-size:12px; margin-top:14px; }
     .hidden { display:none !important; }
     .status { margin-top:14px; color:#334155; font-size:14px; line-height:1.5; }
+    .debug-panel { display:none; margin-top:18px; padding:14px; background:#f8fafc; border:1px dashed #94a3b8; border-radius:14px; font-size:12px; color:#334155; white-space:pre-wrap; }
+    .debug-warn { display:none; margin-top:14px; padding:12px; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; border-radius:14px; font-size:13px; }
     @media (max-width: 640px) { .grid { grid-template-columns:1fr; } h1 { font-size:25px; } .head,.body { padding:22px; } }
   </style>
 </head>
@@ -64,11 +66,14 @@
 
         <div class="actions">
           <button class="primary" id="submitConsent" type="submit">Consent to view the concept plan</button>
-          <a class="continue-link secondary hidden" id="continueLink" href="#">Continue to website preview</a>
+          <a class="continue-link secondary hidden" id="continueLink" href="https://muhanadbin-hue.github.io/demos/flinders-cafe-8e579240/?owner_ack=1">Continue to website preview</a>
         </div>
       </form>
 
+      <iframe name="consentFrame" id="consentFrame" class="hidden"></iframe>
       <div class="status" id="statusText"></div>
+      <div class='debug-warn' id='endpointWarn'>Automatic consent email is not configured yet. The page will still open the preview.</div>
+      <div class="debug-panel" id="debugPanel"></div>
       <div class="muted">After acknowledgement, you will be taken to the concept preview.</div>
     </div>
   </main>
@@ -76,15 +81,29 @@
   <script>
   (function() {
     var webhookEndpoint = "";
-    var consentEmail = "websitesconsent@gmail.com";
     var businessName = "Flinder\u2019s Cafe";
     var previewUrl = "https://muhanadbin-hue.github.io/demos/flinders-cafe-8e579240/";
     var nextUrl = "https://muhanadbin-hue.github.io/demos/flinders-cafe-8e579240/?owner_ack=1";
+    var params = new URLSearchParams(window.location.search);
+    var debug = params.get('debug') === '1';
 
     var form = document.getElementById('consentForm');
     var button = document.getElementById('submitConsent');
     var continueLink = document.getElementById('continueLink');
     var statusText = document.getElementById('statusText');
+    var debugPanel = document.getElementById('debugPanel');
+    var endpointWarn = document.getElementById('endpointWarn');
+
+    if (debug) {
+      debugPanel.style.display = 'block';
+      if (endpointWarn) endpointWarn.style.display = 'block';
+      debugPanel.textContent = 'Debug mode\nWebhook configured: ' + (webhookEndpoint ? 'YES' : 'NO') + '\nPreview URL: ' + previewUrl + '\nNext URL: ' + nextUrl;
+    }
+
+    function logDebug(msg) {
+      console.log('[consent]', msg);
+      if (debugPanel && debug) debugPanel.textContent += '\n' + msg;
+    }
 
     function getValue(id) {
       var el = document.getElementById(id);
@@ -95,7 +114,10 @@
       try {
         var storageKey = 'owner_consent_ack_' + new URL(previewUrl).pathname;
         localStorage.setItem(storageKey, 'acknowledged-' + new Date().toISOString());
-      } catch(e) {}
+        logDebug('Saved local acknowledgement: ' + storageKey);
+      } catch(e) {
+        logDebug('Could not write localStorage: ' + e.message);
+      }
     }
 
     function buildPayload() {
@@ -108,53 +130,47 @@
         role: getValue('ownerRole'),
         acknowledgement: 'Acknowledged independent concept preview, not official unless approved by the business owner, using public information/images for demonstration.',
         submitted_at: new Date().toISOString(),
+        page_url: window.location.href,
+        user_agent: navigator.userAgent,
         source: 'QR consent gate'
       };
     }
 
-    function buildMailto(payload) {
-      var subject = 'Owner acknowledgement - ' + payload.business;
-      var body = [
-        'Owner acknowledgement for: ' + payload.business,
-        '',
-        'Name: ' + (payload.name || ''),
-        'Role: ' + (payload.role || ''),
-        'Phone: ' + (payload.phone || ''),
-        'Email: ' + (payload.email || ''),
-        'Preview URL: ' + payload.preview_url,
-        'Submitted at: ' + payload.submitted_at,
-        '',
-        payload.acknowledgement
-      ].join('
-');
-      return 'mailto:' + encodeURIComponent(consentEmail) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    function submitViaHiddenForm(payload) {
+      if (!webhookEndpoint) return false;
+      var hiddenForm = document.createElement('form');
+      hiddenForm.method = 'POST';
+      hiddenForm.action = webhookEndpoint;
+      hiddenForm.target = 'consentFrame';
+      hiddenForm.style.display = 'none';
+
+      Object.keys(payload).forEach(function(key) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = payload[key] || '';
+        hiddenForm.appendChild(input);
+      });
+
+      document.body.appendChild(hiddenForm);
+      hiddenForm.submit();
+      logDebug('Submitted hidden form to webhook');
+      return true;
     }
 
-    async function submitToWebhook(payload) {
-      var data = new FormData();
-      Object.keys(payload).forEach(function(key) { data.append(key, payload[key]); });
-      await fetch(webhookEndpoint, { method: 'POST', body: data, mode: 'no-cors' });
-    }
-
-    form.addEventListener('submit', async function(event) {
+    form.addEventListener('submit', function(event) {
       event.preventDefault();
       var payload = buildPayload();
       button.disabled = true;
-      statusText.textContent = 'Saving acknowledgement...';
+      statusText.textContent = 'Acknowledgement accepted. Opening preview...';
+      markAcknowledged();
 
-      try {
-        if (webhookEndpoint) {
-          await submitToWebhook(payload);
-        }
-        markAcknowledged();
-        statusText.textContent = 'Acknowledgement accepted. Opening preview...';
-        window.location.href = nextUrl;
-      } catch (e) {
-        // Do not block the owner if the optional webhook/email capture fails.
-        markAcknowledged();
-        statusText.textContent = 'Acknowledgement accepted. Opening preview...';
-        window.location.href = nextUrl;
-      }
+      var submitted = false;
+      try { submitted = submitViaHiddenForm(payload); } catch (e) { logDebug('Webhook submit failed: ' + e.message); }
+      if (!submitted) logDebug('No webhook configured, so no email evidence was sent.');
+
+      continueLink.classList.remove('hidden');
+      setTimeout(function() { window.location.href = nextUrl; }, webhookEndpoint ? 1400 : 250);
     });
   })();
   </script>

@@ -10,28 +10,39 @@
 <!-- OWNER_CONSENT_GUARD_START -->
 <script>
 (function () {
-  try {
-    var params = new URLSearchParams(window.location.search);
-    var storageKey = 'owner_consent_ack_' + window.location.pathname;
+  var params = new URLSearchParams(window.location.search);
+  var storageKey = 'owner_consent_ack_' + window.location.pathname;
 
-    if (params.get('preview_admin') === '1') return;
+  function safeSetAck() {
+    try { localStorage.setItem(storageKey, 'acknowledged-' + new Date().toISOString()); } catch (e) {}
+  }
 
-    if (params.get('consent_reset') === '1') {
-      localStorage.removeItem(storageKey);
-    }
+  function safeHasAck() {
+    try { return !!localStorage.getItem(storageKey); } catch (e) { return false; }
+  }
 
-    if (params.get('owner_ack') === '1') {
-      localStorage.setItem(storageKey, 'acknowledged-' + new Date().toISOString());
+  // Admin bypass is for your testing only.
+  if (params.get('preview_admin') === '1') return;
+
+  // The consent page redirects here with owner_ack=1. Do not redirect back to consent.
+  if (params.get('owner_ack') === '1') {
+    safeSetAck();
+    try {
       var cleanUrl = window.location.origin + window.location.pathname;
       window.history.replaceState({}, document.title, cleanUrl);
-      return;
-    }
-
-    if (localStorage.getItem(storageKey)) return;
-    window.location.replace('consent.html');
-  } catch (e) {
-    window.location.replace('consent.html');
+    } catch (e) {}
+    return;
   }
+
+  if (params.get('consent_reset') === '1') {
+    try { localStorage.removeItem(storageKey); } catch (e) {}
+    window.location.replace('consent.html?debug=1');
+    return;
+  }
+
+  if (safeHasAck()) return;
+
+  window.location.replace('consent.html');
 })();
 </script>
 <!-- OWNER_CONSENT_GUARD_END -->
