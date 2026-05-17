@@ -86,6 +86,21 @@
     var nextUrl = "https://muhanadbin-hue.github.io/demos/chew-babe-pet-grooming-cafe-b5f765c9/?owner_ack=1";
     var params = new URLSearchParams(window.location.search);
     var debug = params.get('debug') === '1';
+    var consentReset = params.get('consent_reset') === '1';
+    var previewPath = new URL(previewUrl).pathname;
+    var consentStorageKey = 'owner_consent_ack_' + previewPath;
+
+    // QR codes always open consent.html first. If this device/browser already
+    // acknowledged this specific business preview, skip the form and go straight
+    // to the concept page.
+    try {
+      if (consentReset) {
+        localStorage.removeItem(consentStorageKey);
+      } else if (!debug && localStorage.getItem(consentStorageKey)) {
+        window.location.replace(nextUrl);
+        return;
+      }
+    } catch(e) {}
 
     var form = document.getElementById('consentForm');
     var button = document.getElementById('submitConsent');
@@ -97,7 +112,7 @@
     if (debug) {
       debugPanel.style.display = 'block';
       if (endpointWarn) endpointWarn.style.display = 'block';
-      debugPanel.textContent = 'Debug mode\nWebhook configured: ' + (webhookEndpoint ? 'YES' : 'NO') + '\nPreview URL: ' + previewUrl + '\nNext URL: ' + nextUrl;
+      debugPanel.textContent = 'Debug mode\nWebhook configured: ' + (webhookEndpoint ? 'YES' : 'NO') + '\nPreview URL: ' + previewUrl + '\nNext URL: ' + nextUrl + '\nStorage key: ' + consentStorageKey + '\nConsent reset: ' + (consentReset ? 'YES' : 'NO');
     }
 
     function logDebug(msg) {
@@ -112,9 +127,8 @@
 
     function markAcknowledged() {
       try {
-        var storageKey = 'owner_consent_ack_' + new URL(previewUrl).pathname;
-        localStorage.setItem(storageKey, 'acknowledged-' + new Date().toISOString());
-        logDebug('Saved local acknowledgement: ' + storageKey);
+        localStorage.setItem(consentStorageKey, 'acknowledged-' + new Date().toISOString());
+        logDebug('Saved local acknowledgement: ' + consentStorageKey);
       } catch(e) {
         logDebug('Could not write localStorage: ' + e.message);
       }
