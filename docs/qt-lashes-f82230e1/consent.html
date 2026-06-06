@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Owner acknowledgement - QT lashes</title>
+  <title>Owner consent - QT lashes</title>
   <style>
     :root { color-scheme: light; }
     body { margin:0; min-height:100vh; font-family: Inter, Arial, Helvetica, sans-serif; background:linear-gradient(135deg,#0f172a,#334155); color:#0f172a; display:flex; align-items:center; justify-content:center; padding:24px; }
@@ -18,6 +18,9 @@
     .notice { background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a; border-radius:18px; padding:14px 16px; font-size:14px; margin:18px 0; }
     label { display:block; margin:14px 0 7px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:900; color:#334155; }
     input { width:100%; box-sizing:border-box; border:1px solid #cbd5e1; border-radius:14px; padding:13px 14px; font-size:15px; }
+    .consent-check { display:flex; gap:12px; align-items:flex-start; margin-top:20px; padding:16px; border:1px solid #bfdbfe; border-radius:16px; background:#eff6ff; color:#1e3a8a; font-size:14px; font-weight:600; line-height:1.55; text-transform:none; letter-spacing:0; cursor:pointer; }
+    .consent-check input { width:18px; height:18px; flex:0 0 18px; margin:2px 0 0; padding:0; accent-color:#0f172a; }
+    .consent-check span { display:block; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     .actions { display:flex; flex-direction:column; gap:12px; margin-top:22px; }
     button, .continue-link { display:flex; justify-content:center; align-items:center; text-align:center; border:0; border-radius:999px; padding:14px 18px; font-weight:900; cursor:pointer; text-decoration:none; font-size:15px; }
@@ -35,20 +38,21 @@
   <main class="box">
     <div class="head">
       <div class="pill">Website concept preview</div>
-      <h1>Owner acknowledgement for QT lashes</h1>
+      <h1>Owner consent for QT lashes</h1>
     </div>
     <div class="body">
       <p>This is an independent concept preview prepared for the business owner. It is <strong>not</strong> the official website of QT lashes unless approved by the business owner.</p>
       <ul>
-        <li>The preview may use publicly available business information, including business name, address, phone, opening hours, map details, ratings, reviews, and public images.</li>
+        <li>The preview may use publicly available business information, including the business name, address, phone, opening hours, map details, ratings, and reviews.</li>
+        <li>Images displayed in the preview should be owned by, supplied by, or authorised for use by the business.</li>
         <li>The purpose is to show how a professional landing page could look if the business chooses to claim or customise it.</li>
         <li>The owner can claim, edit, or request removal of this preview at any time.</li>
       </ul>
-      <div class="notice">Please review the details below. Phone and email are pre-filled where publicly available. Name is optional and can be left blank.</div>
+      <div class="notice">Please review the details below and confirm your consent. Your name and role are required so the consent record identifies the owner or authorised representative. Phone and email are pre-filled where publicly available.</div>
 
       <form id="consentForm">
-        <label for="ownerName">Your name</label>
-        <input id="ownerName" name="name" autocomplete="name" placeholder="Optional — owner / authorised representative name">
+        <label for="ownerName">Your name *</label>
+        <input id="ownerName" name="name" autocomplete="name" placeholder="Owner / authorised representative name" required>
 
         <div class="grid">
           <div>
@@ -61,11 +65,16 @@
           </div>
         </div>
 
-        <label for="ownerRole">Role</label>
-        <input id="ownerRole" name="role" autocomplete="organization-title" placeholder="Owner, manager, authorised representative">
+        <label for="ownerRole">Role *</label>
+        <input id="ownerRole" name="role" autocomplete="organization-title" placeholder="Owner, manager, authorised representative" required>
+
+        <label class="consent-check" for="consentConfirmed">
+          <input id="consentConfirmed" name="consent_confirmed" type="checkbox" value="Yes" required>
+          <span>I confirm that I am the business owner or an authorised representative. I consent to the use and display of the business's publicly available information, together with images owned by, supplied by, or authorised for use by the business, in this independent concept website preview solely to demonstrate a possible website design. I understand that this does not make the preview the business's official website, and I may request edits or removal at any time.</span>
+        </label>
 
         <div class="actions">
-          <button class="primary" id="submitConsent" type="submit">Consent to view the concept plan</button>
+          <button class="primary" id="submitConsent" type="submit">Agree and view concept preview</button>
           <a class="continue-link secondary hidden" id="continueLink" href="https://muhanadbin-hue.github.io/demos/qt-lashes-f82230e1/?owner_ack=1">Continue to website preview</a>
         </div>
       </form>
@@ -74,7 +83,7 @@
       <div class="status" id="statusText"></div>
       
       <div class="debug-panel" id="debugPanel"></div>
-      <div class="muted">After acknowledgement, you will be taken to the concept preview.</div>
+      <div class="muted">After your consent is recorded, you will be taken to the concept preview.</div>
     </div>
   </main>
 
@@ -127,14 +136,16 @@
 
     function markAcknowledged() {
       try {
-        localStorage.setItem(consentStorageKey, 'acknowledged-' + new Date().toISOString());
-        logDebug('Saved local acknowledgement: ' + consentStorageKey);
+        localStorage.setItem(consentStorageKey, 'consented-' + new Date().toISOString());
+        logDebug('Saved local consent record: ' + consentStorageKey);
       } catch(e) {
         logDebug('Could not write localStorage: ' + e.message);
       }
     }
 
     function buildPayload() {
+      var consentText = "I confirm that I am the business owner or an authorised representative. I consent to the use and display of the business's publicly available information, together with images owned by, supplied by, or authorised for use by the business, in this independent concept website preview solely to demonstrate a possible website design. I understand that this does not make the preview the business's official website, and I may request edits or removal at any time.";
+
       return {
         business: businessName,
         preview_url: previewUrl,
@@ -142,7 +153,11 @@
         phone: getValue('ownerPhone'),
         email: getValue('ownerEmail'),
         role: getValue('ownerRole'),
-        acknowledgement: 'Acknowledged independent concept preview, not official unless approved by the business owner, using public information/images for demonstration.',
+        consent_confirmed: document.getElementById('consentConfirmed').checked ? 'Yes' : 'No',
+        owner_authority_confirmed: document.getElementById('consentConfirmed').checked ? 'Yes' : 'No',
+        consent_version: 'public-data-and-authorised-images-v1',
+        consent_text: consentText,
+        acknowledgement: 'Owner or authorised representative expressly consented to the use and display of the business publicly available information and authorised business images in the independent concept preview for demonstration purposes. The owner understands the preview is not official and may request edits or removal at any time.',
         submitted_at: new Date().toISOString(),
         page_url: window.location.href,
         user_agent: navigator.userAgent,
@@ -176,7 +191,7 @@
       event.preventDefault();
       var payload = buildPayload();
       button.disabled = true;
-      statusText.textContent = 'Acknowledgement accepted. Opening preview...';
+      statusText.textContent = 'Consent recorded. Opening preview...';
       markAcknowledged();
 
       var submitted = false;

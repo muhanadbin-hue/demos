@@ -315,7 +315,7 @@ I&#x27;m obsessed, Thankyou Tina!
                 <div>
                     <div class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Claim, edit, or remove</div>
                     <h2 class="mt-3 text-3xl font-black text-slate-900 md:text-4xl">Business owner request form</h2>
-                    <p class="mt-4 text-lg leading-8 text-slate-600">Use this form to request ownership, ask for content edits, or request removal. The same submission path used by the consent flow sends the details to the website owner inbox.</p>
+                    <p class="mt-4 text-lg leading-8 text-slate-600">Use this form to request ownership, ask for content edits, or request removal.</p>
                     <ul class="mt-5 list-disc space-y-2 pl-6 text-slate-600">
                         <li>Choose whether you want to claim the preview as-is, claim it with edits, or request removal.</li>
                         <li>Tell us your preferred contact method so we can follow up quickly.</li>
@@ -352,8 +352,8 @@ I&#x27;m obsessed, Thankyou Tina!
                     </label>
 
                     <label id="claimNotesWrap" class="mt-4 hidden text-sm font-semibold text-slate-700">
-                        What should be added or changed?
-                        <textarea id="claimNotes" name="notes" rows="4" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-0 transition focus:border-slate-400" placeholder="Tell us what should be updated, corrected, or added to the preview."></textarea>
+                        What would you like to see on the landing page?
+                        <textarea id="claimNotes" name="notes" rows="4" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-0 transition focus:border-slate-400" placeholder="Tell us what you want to show, update, or improve on the landing page."></textarea>
                     </label>
 
                     <label class="mt-4 block text-sm font-semibold text-slate-700">
@@ -367,7 +367,7 @@ I&#x27;m obsessed, Thankyou Tina!
 
                     <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
                         <button type="submit" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-slate-700">Send request</button>
-                        <p id="claimStatus" class="text-sm text-slate-600">We’ll send this request using the same consent submission path already used on the preview pages.</p>
+                        <p id="claimStatus" class="text-sm text-slate-600">Thanks for your request — our web designer will contact you soon.</p>
                     </div>
                     <iframe name="claimFrame" id="claimFrame" class="hidden"></iframe>
                 </form>
@@ -423,21 +423,32 @@ I&#x27;m obsessed, Thankyou Tina!
       if (form) {
         form.addEventListener('submit', function(event){
           event.preventDefault();
+          var notesValue = document.getElementById('claimNotes').value.trim();
+          var requestTypeValue = typeSelect.value;
+          var preferredContactValue = document.getElementById('claimContactMethod').value;
           var payload = {
             business: businessNameEl.value.trim(),
             name: ownerNameEl.value.trim(),
             phone: phoneEl.value.trim(),
             email: emailEl.value.trim(),
-            request_type: typeSelect.value,
-            notes: document.getElementById('claimNotes').value.trim(),
-            preferred_contact: document.getElementById('claimContactMethod').value,
+            request_type: requestTypeValue,
+            requestType: requestTypeValue,
+            notes: notesValue,
+            notesText: notesValue,
+            what_you_want_to_see: notesValue,
+            preferred_contact: preferredContactValue,
+            preferredContact: preferredContactValue,
+            preferred_contact_method: preferredContactValue,
             source: 'business owner request form',
             preview_url: window.location.href,
+            page_url: window.location.href,
+            consent_page_url: document.referrer || '',
+            request_summary: 'Request type: ' + requestTypeValue + (notesValue ? '\nWhat you want to see: ' + notesValue : '') + '\nPreferred contact: ' + preferredContactValue,
             submitted_at: new Date().toISOString(),
             user_agent: navigator.userAgent
           };
 
-          statusEl.textContent = 'Thanks — your request is being sent using the existing consent submission flow.';
+          statusEl.textContent = 'Thanks for your request — our web designer will contact you soon.';
           try { submitViaHiddenForm(payload); } catch (e) {
             statusEl.textContent = 'The request could not be submitted automatically. Please use the contact details on the page.';
           }
