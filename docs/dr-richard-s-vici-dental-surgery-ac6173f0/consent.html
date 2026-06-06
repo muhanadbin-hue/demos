@@ -43,8 +43,8 @@
     <div class="body">
       <p>This is an independent concept preview prepared for the business owner. It is <strong>not</strong> the official website of Dr Richard S Vici DENTAL SURGERY unless approved by the business owner.</p>
       <ul>
-        <li>The preview may use publicly available business information, including the business name, address, phone, opening hours, map details, ratings, and reviews.</li>
-        <li>Images displayed in the preview should be owned by, supplied by, or authorised for use by the business.</li>
+        <li>The preview may use publicly available business listing details, including the business name, address, phone, opening hours, map details, public ratings, and review information.</li>
+        <li>Images shown in this concept preview are sample images used only to demonstrate a possible website design. Final website images can be replaced with photos supplied or approved by the business owner.</li>
         <li>The purpose is to show how a professional landing page could look if the business chooses to claim or customise it.</li>
         <li>The owner can claim, edit, or request removal of this preview at any time.</li>
       </ul>
@@ -70,7 +70,7 @@
 
         <label class="consent-check" for="consentConfirmed">
           <input id="consentConfirmed" name="consent_confirmed" type="checkbox" value="Yes" required>
-          <span>I confirm that I am the business owner or an authorised representative. I consent to the use and display of the business's publicly available information, together with images owned by, supplied by, or authorised for use by the business, in this independent concept website preview solely to demonstrate a possible website design. I understand that this does not make the preview the business's official website, and I may request edits or removal at any time.</span>
+          <span>I confirm that I am the business owner or an authorised representative. I agree for this independent concept preview to use publicly available business listing details, public ratings and review information, and sample images used only to demonstrate a possible website design. I understand this is not the business's official website unless approved, and I can request edits or removal at any time.</span>
         </label>
 
         <div class="actions">
@@ -144,7 +144,7 @@
     }
 
     function buildPayload() {
-      var consentText = "I confirm that I am the business owner or an authorised representative. I consent to the use and display of the business's publicly available information, together with images owned by, supplied by, or authorised for use by the business, in this independent concept website preview solely to demonstrate a possible website design. I understand that this does not make the preview the business's official website, and I may request edits or removal at any time.";
+      var consentText = "I confirm that I am the business owner or an authorised representative. I agree for this independent concept preview to use publicly available business listing details, public ratings and review information, and sample images used only to demonstrate a possible website design. I understand this is not the business's official website unless approved, and I can request edits or removal at any time.";
 
       return {
         business: businessName,
@@ -153,11 +153,12 @@
         phone: getValue('ownerPhone'),
         email: getValue('ownerEmail'),
         role: getValue('ownerRole'),
+        image_usage_note: "Images are presented as sample demonstration images in the concept preview. Final website images can be supplied or approved by the business owner.",
         consent_confirmed: document.getElementById('consentConfirmed').checked ? 'Yes' : 'No',
         owner_authority_confirmed: document.getElementById('consentConfirmed').checked ? 'Yes' : 'No',
         consent_version: 'public-data-and-authorised-images-v1',
         consent_text: consentText,
-        acknowledgement: 'Owner or authorised representative expressly consented to the use and display of the business publicly available information and authorised business images in the independent concept preview for demonstration purposes. The owner understands the preview is not official and may request edits or removal at any time.',
+        acknowledgement: "Owner or authorised representative expressly agreed that the independent concept preview may use publicly available business listing details, public ratings and review information, and sample images used only to demonstrate a possible website design. The owner understands the preview is not official unless approved and may request edits or removal at any time.",
         submitted_at: new Date().toISOString(),
         page_url: window.location.href,
         user_agent: navigator.userAgent,
