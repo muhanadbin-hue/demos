@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Visit Route Checklist</title>
+<style>
+  :root {
+    --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0;
+    --brand:#0f172a; --soft:#eff6ff; --warn:#fff7ed; --ok:#ecfdf5;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Inter, Arial, sans-serif; background:var(--bg); color:var(--text); }
+  header { position:sticky; top:0; z-index:10; background:rgba(248,250,252,.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); padding:14px 16px; }
+  h1 { font-size:22px; line-height:1.15; margin:0 0 8px; letter-spacing:-.03em; }
+  .sub { color:var(--muted); font-size:13px; line-height:1.45; }
+  .progress-wrap { margin-top:12px; background:#e2e8f0; border-radius:999px; overflow:hidden; height:12px; }
+  .progress { height:100%; width:0%; background:#0f172a; transition:.2s; }
+  .progress-text { margin-top:7px; font-size:13px; font-weight:800; }
+  .toolbar { display:grid; grid-template-columns:1fr; gap:8px; margin-top:12px; }
+  input[type="search"] { width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:14px; font-size:15px; }
+  button, .route-link, .small-link { border:0; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; padding:10px 14px; font-weight:800; font-size:13px; cursor:pointer; }
+  button { background:#e2e8f0; color:#0f172a; }
+  .route-link { background:#0f172a; color:#fff; margin:8px 0 12px; }
+  .small-link { background:#eff6ff; color:#1d4ed8; padding:8px 10px; }
+  main { padding:16px; max-width:980px; margin:0 auto; }
+  .notice { background:var(--warn); border:1px solid #fed7aa; border-radius:18px; padding:14px; margin:14px 0; color:#7c2d12; font-size:14px; line-height:1.5; }
+  .route { margin:18px 0 26px; }
+  .route-head { background:#0f172a; color:#fff; padding:16px; border-radius:20px 20px 0 0; }
+  .route-head h2 { margin:0; font-size:18px; }
+  .route-head p { margin:7px 0 0; color:#cbd5e1; font-size:13px; line-height:1.45; }
+  .route-body { background:var(--card); border:1px solid var(--line); border-top:0; border-radius:0 0 20px 20px; padding:12px; }
+  .stop { display:grid; grid-template-columns:42px 1fr; gap:10px; padding:12px 6px; border-bottom:1px solid var(--line); }
+  .stop:last-child { border-bottom:0; }
+  .check { width:30px; height:30px; accent-color:#0f172a; margin-top:2px; }
+  .stop-title { font-weight:900; font-size:15px; line-height:1.25; }
+  .addr { color:#475569; font-size:13px; margin-top:5px; line-height:1.35; }
+  .meta { color:#64748b; font-size:12px; margin-top:5px; }
+  .note { background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; padding:8px; margin-top:8px; font-size:12px; color:#334155; line-height:1.35; }
+  .actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:9px; }
+  textarea { width:100%; min-height:42px; margin-top:8px; border:1px solid var(--line); border-radius:12px; padding:9px; font-size:13px; font-family:inherit; }
+  .done .stop-title { text-decoration: line-through; color:#64748b; }
+  .done { background:#f8fafc; }
+  .call-first { background:#fffbeb; border-color:#f59e0b; }
+  .footer { color:#64748b; font-size:12px; line-height:1.5; padding:18px 0 28px; }
+  @media (min-width:720px) {
+    h1 { font-size:28px; }
+    .toolbar { grid-template-columns:1fr auto auto; align-items:center; }
+    .stop { grid-template-columns:50px 1fr; padding:14px 10px; }
+  }
+  @media print {
+    header { position:static; }
+    .toolbar, textarea, .actions .small-link, .route-link { display:none; }
+    .stop { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Business Visit Route Checklist</h1>
+  <div class="sub">Grouped to reduce backtracking. I treated mobile/home-service businesses as <strong>call first</strong> so you do not waste time driving to addresses that may not be shopfronts. Generated: 2026-06-07 02:01</div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+  <div class="progress-text" id="progressText">0 / 86 visited</div>
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Search business, suburb, address...">
+    <button onclick="exportCSV()">Export progress CSV</button>
+    <button onclick="clearAll()">Reset all ticks</button>
+  </div>
+</header>
+<main>
+  <div class="notice">
+    <strong>Best way to use:</strong> open one route at a time. Park once where possible, walk clustered shops, and call businesses marked “call first” before driving there. Google Maps links are included for every stop.
+  </div>
+
+  <section class="route" data-route="1. Macquarie Centre / Herring &amp; Waterloo walk">
+    <div class="route-head">
+      <h2>1. Macquarie Centre / Herring &amp; Waterloo walk</h2>
+      <p>Park once at/near Macquarie Centre. Visit all centre shops together before moving to street stops.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Macquarie+Shopping+Centre%2C+Cnr+Waterloo+Rd+and+Herring+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia&destination=4436A+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia&travelmode=driving&waypoints=K2006%2C+Level+2%2F74%2C+Macquarie+Park+NSW+2113%2C+Australia%7CShop+R01-100%2C+North+Ryde+NSW+2113%2C+Australia%7CCnr+Herring+Rd+%26+Waterloo+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7CLevel+1%2C+Shop+1048%2C+Cnr+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="1" data-search="kings cut barbershop macquarie shopping centre, cnr waterloo rd and herring rd, macquarie park nsw 2113, australia inside macquarie centre. park once and walk.">
+        <div><input class="check" type="checkbox" id="stop-1" aria-label="Visited Kings Cut Barbershop"></div>
+        <div>
+          <div class="stop-title">1. Kings Cut Barbershop</div>
+          <div class="addr">Macquarie Shopping Centre, Cnr Waterloo Rd and Herring Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9889 7373</div>
+          <div class="note">Inside Macquarie Centre. Park once and walk.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Kings+Cut+Barbershop+Macquarie+Shopping+Centre%2C+Cnr+Waterloo+Rd+and+Herring+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298897373">Call</a>
+          </div>
+          <textarea id="note-1" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="2" data-search="all about ibrows k2006, level 2/74, macquarie park nsw 2113, australia macquarie centre area; confirm shop location.">
+        <div><input class="check" type="checkbox" id="stop-2" aria-label="Visited All About iBrows"></div>
+        <div>
+          <div class="stop-title">2. All About iBrows</div>
+          <div class="addr">K2006, Level 2/74, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0410 907 020</div>
+          <div class="note">Macquarie Centre area; confirm shop location.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=All+About+iBrows+K2006%2C+Level+2%2F74%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0410907020">Call</a>
+          </div>
+          <textarea id="note-2" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="3" data-search="bliss nails &amp; beauty bar macquarie centre shop r01-100, north ryde nsw 2113, australia macquarie centre; walk with other centre shops.">
+        <div><input class="check" type="checkbox" id="stop-3" aria-label="Visited Bliss Nails &amp; Beauty Bar Macquarie Centre"></div>
+        <div>
+          <div class="stop-title">3. Bliss Nails &amp; Beauty Bar Macquarie Centre</div>
+          <div class="addr">Shop R01-100, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 7813 6183</div>
+          <div class="note">Macquarie Centre; walk with other centre shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Bliss+Nails+%26+Beauty+Bar+Macquarie+Centre+Shop+R01-100%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0278136183">Call</a>
+          </div>
+          <textarea id="note-3" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="4" data-search="imperial massage macquarie centre cnr herring rd &amp; waterloo rd, north ryde nsw 2113, australia macquarie centre.">
+        <div><input class="check" type="checkbox" id="stop-4" aria-label="Visited Imperial Massage Macquarie Centre"></div>
+        <div>
+          <div class="stop-title">4. Imperial Massage Macquarie Centre</div>
+          <div class="addr">Cnr Herring Rd &amp; Waterloo Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 5556</div>
+          <div class="note">Macquarie Centre.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Imperial+Massage+Macquarie+Centre+Cnr+Herring+Rd+%26+Waterloo+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298885556">Call</a>
+          </div>
+          <textarea id="note-4" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="5" data-search="palms healing massage and acupuncture level 1, shop 1048, cnr herring rd &amp; waterloo rd, macquarie park nsw 2113, australia macquarie centre.">
+        <div><input class="check" type="checkbox" id="stop-5" aria-label="Visited Palms Healing Massage and Acupuncture"></div>
+        <div>
+          <div class="stop-title">5. Palms Healing Massage and Acupuncture</div>
+          <div class="addr">Level 1, Shop 1048, Cnr Herring Rd &amp; Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 8959 0095</div>
+          <div class="note">Macquarie Centre.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Palms+Healing+Massage+and+Acupuncture+Level+1%2C+Shop+1048%2C+Cnr+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0289590095">Call</a>
+          </div>
+          <textarea id="note-5" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="6" data-search="weilisi - remedial massage &amp; natural therapy 4436a herring rd &amp; waterloo rd, macquarie park nsw 2113, australia macquarie centre / level 4 area; confirm opposite timezone.">
+        <div><input class="check" type="checkbox" id="stop-6" aria-label="Visited Weilisi - Remedial Massage &amp; Natural Therapy"></div>
+        <div>
+          <div class="stop-title">6. Weilisi - Remedial Massage &amp; Natural Therapy</div>
+          <div class="addr">4436A Herring Rd &amp; Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 8097 3527</div>
+          <div class="note">Macquarie Centre / Level 4 area; confirm opposite Timezone.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Weilisi+-+Remedial+Massage+%26+Natural+Therapy+4436A+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0280973527">Call</a>
+          </div>
+          <textarea id="note-6" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="2. Macquarie Park street loop">
+    <div class="route-head">
+      <h2>2. Macquarie Park street loop</h2>
+      <p>Macquarie Park street cluster: Waterloo, Khartoum, Halifax, Fontenoy, Mooltan, Eden Park, Innovation, University, Talavera.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Shop+4A%2F33+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia&destination=5%2F2+Mooltan+Ave%2C+Macquarie+Park+NSW+2113%2C+Australia&travelmode=driving&waypoints=Shop+3%2F8+Khartoum+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia%7C78+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia%7CShop+8%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia%7CShop+15%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia%7CShop+T5%2F19+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia%7CLachlan%27s+Square+Village%2C+17+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia%7C13+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia%7C152%2F1-15+Fontenoy+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="7" data-search="so cafe shop 4a/33 waterloo rd, macquarie park nsw 2113, australia start after macquarie centre.">
+        <div><input class="check" type="checkbox" id="stop-7" aria-label="Visited SO CAFE"></div>
+        <div>
+          <div class="stop-title">7. SO CAFE</div>
+          <div class="addr">Shop 4A/33 Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9878 0694</div>
+          <div class="note">Start after Macquarie Centre.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=SO+CAFE+Shop+4A%2F33+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298780694">Call</a>
+          </div>
+          <textarea id="note-7" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="8" data-search="the hungry baker shop 3/8 khartoum rd, macquarie park nsw 2113, australia close to waterloo/khartoum.">
+        <div><input class="check" type="checkbox" id="stop-8" aria-label="Visited The Hungry Baker"></div>
+        <div>
+          <div class="stop-title">8. The Hungry Baker</div>
+          <div class="addr">Shop 3/8 Khartoum Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0449 936 658</div>
+          <div class="note">Close to Waterloo/Khartoum.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=The+Hungry+Baker+Shop+3%2F8+Khartoum+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0449936658">Call</a>
+          </div>
+          <textarea id="note-8" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="9" data-search="espresso 7ty8 78 waterloo rd, macquarie park nsw 2113, australia waterloo rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-9" aria-label="Visited Espresso 7ty8"></div>
+        <div>
+          <div class="stop-title">9. Espresso 7ty8</div>
+          <div class="addr">78 Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9889 7557</div>
+          <div class="note">Waterloo Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Espresso+7ty8+78+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298897557">Call</a>
+          </div>
+          <textarea id="note-9" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="10" data-search="as usual shop 8/101 waterloo rd, macquarie park nsw 2113, australia same address cluster as chew babe.">
+        <div><input class="check" type="checkbox" id="stop-10" aria-label="Visited As Usual"></div>
+        <div>
+          <div class="stop-title">10. As Usual</div>
+          <div class="addr">Shop 8/101 Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0437 557 522</div>
+          <div class="note">Same address cluster as Chew Babe.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=As+Usual+Shop+8%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0437557522">Call</a>
+          </div>
+          <textarea id="note-10" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="11" data-search="chew babe pet grooming cafe shop 15/101 waterloo rd, macquarie park nsw 2113, australia same stop as as usual.">
+        <div><input class="check" type="checkbox" id="stop-11" aria-label="Visited Chew Babe Pet Grooming Cafe"></div>
+        <div>
+          <div class="stop-title">11. Chew Babe Pet Grooming Cafe</div>
+          <div class="addr">Shop 15/101 Waterloo Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0481 177 734</div>
+          <div class="note">Same stop as As Usual.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Chew+Babe+Pet+Grooming+Cafe+Shop+15%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0481177734">Call</a>
+          </div>
+          <textarea id="note-11" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="12" data-search="totally male barbershop shop t5/19 halifax st, macquarie park nsw 2113, australia halifax/lachlan square cluster.">
+        <div><input class="check" type="checkbox" id="stop-12" aria-label="Visited Totally Male Barbershop"></div>
+        <div>
+          <div class="stop-title">12. Totally Male Barbershop</div>
+          <div class="addr">Shop T5/19 Halifax St, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9567 8341</div>
+          <div class="note">Halifax/Lachlan Square cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Totally+Male+Barbershop+Shop+T5%2F19+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0295678341">Call</a>
+          </div>
+          <textarea id="note-12" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="13" data-search="ocean nails &amp; beauty, macquarie park (lachlan&#x27;s square village) lachlan&#x27;s square village, 17 halifax st, macquarie park nsw 2113, australia same cluster as halifax st.">
+        <div><input class="check" type="checkbox" id="stop-13" aria-label="Visited Ocean Nails &amp; Beauty, Macquarie Park (Lachlan&#x27;s Square Village)"></div>
+        <div>
+          <div class="stop-title">13. Ocean Nails &amp; Beauty, Macquarie Park (Lachlan&#x27;s Square Village)</div>
+          <div class="addr">Lachlan&#x27;s Square Village, 17 Halifax St, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0415 662 688</div>
+          <div class="note">Same cluster as Halifax St.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Ocean+Nails+%26+Beauty%2C+Macquarie+Park+%28Lachlan%27s+Square+Village%29+Lachlan%27s+Square+Village%2C+17+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0415662688">Call</a>
+          </div>
+          <textarea id="note-13" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="14" data-search="chicken v north ryde 13 halifax st, macquarie park nsw 2113, australia same halifax st cluster.">
+        <div><input class="check" type="checkbox" id="stop-14" aria-label="Visited Chicken V North Ryde"></div>
+        <div>
+          <div class="stop-title">14. Chicken V North Ryde</div>
+          <div class="addr">13 Halifax St, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 7226 2121</div>
+          <div class="note">Same Halifax St cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Chicken+V+North+Ryde+13+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0272262121">Call</a>
+          </div>
+          <textarea id="note-14" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="15" data-search="eyelushes &amp; brows 152/1-15 fontenoy rd, macquarie park nsw 2113, australia fontenoy/mooltan cluster.">
+        <div><input class="check" type="checkbox" id="stop-15" aria-label="Visited Eyelushes &amp; Brows"></div>
+        <div>
+          <div class="stop-title">15. Eyelushes &amp; Brows</div>
+          <div class="addr">152/1-15 Fontenoy Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0481 207 668</div>
+          <div class="note">Fontenoy/Mooltan cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Eyelushes+%26+Brows+152%2F1-15+Fontenoy+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0481207668">Call</a>
+          </div>
+          <textarea id="note-15" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="16" data-search="nicecute-nail&amp;eyelash 5/2 mooltan ave, macquarie park nsw 2113, australia close to fontenoy rd.">
+        <div><input class="check" type="checkbox" id="stop-16" aria-label="Visited Nicecute-Nail&amp;Eyelash"></div>
+        <div>
+          <div class="stop-title">16. Nicecute-Nail&amp;Eyelash</div>
+          <div class="addr">5/2 Mooltan Ave, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0447 667 125</div>
+          <div class="note">Close to Fontenoy Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Nicecute-Nail%26Eyelash+5%2F2+Mooltan+Ave%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0447667125">Call</a>
+          </div>
+          <textarea id="note-16" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="17" data-search="neelgri cafe . vegan &amp; vegetarian unit 4/6 eden park dr, macquarie park nsw 2113, australia eden park dr.">
+        <div><input class="check" type="checkbox" id="stop-17" aria-label="Visited Neelgri Cafe . Vegan &amp; Vegetarian"></div>
+        <div>
+          <div class="stop-title">17. Neelgri Cafe . Vegan &amp; Vegetarian</div>
+          <div class="addr">Unit 4/6 Eden Park Dr, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0491 222 248</div>
+          <div class="note">Eden Park Dr.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Neelgri+Cafe+.+Vegan+%26+Vegetarian+Unit+4%2F6+Eden+Park+Dr%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0491222248">Call</a>
+          </div>
+          <textarea id="note-17" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="18" data-search="deux cafe 1 innovation rd, macquarie park nsw 2113, australia innovation/university cluster.">
+        <div><input class="check" type="checkbox" id="stop-18" aria-label="Visited Deux Cafe"></div>
+        <div>
+          <div class="stop-title">18. Deux Cafe</div>
+          <div class="addr">1 Innovation Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0451 453 899</div>
+          <div class="note">Innovation/University cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Deux+Cafe+1+Innovation+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0451453899">Call</a>
+          </div>
+          <textarea id="note-18" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="19" data-search="perfect brew cafe 16 university ave, macquarie park nsw 2113, australia university ave.">
+        <div><input class="check" type="checkbox" id="stop-19" aria-label="Visited Perfect Brew Cafe"></div>
+        <div>
+          <div class="stop-title">19. Perfect Brew Cafe</div>
+          <div class="addr">16 University Ave, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9889 2946</div>
+          <div class="note">University Ave.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Perfect+Brew+Cafe+16+University+Ave%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298892946">Call</a>
+          </div>
+          <textarea id="note-19" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="20" data-search="macquarie sports physiotherapy gymnasium rd, macquarie university nsw 2113, australia macquarie uni area.">
+        <div><input class="check" type="checkbox" id="stop-20" aria-label="Visited Macquarie Sports Physiotherapy"></div>
+        <div>
+          <div class="stop-title">20. Macquarie Sports Physiotherapy</div>
+          <div class="addr">Gymnasium Rd, Macquarie University NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9850 7999</div>
+          <div class="note">Macquarie Uni area.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Macquarie+Sports+Physiotherapy+Gymnasium+Rd%2C+Macquarie+University+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298507999">Call</a>
+          </div>
+          <textarea id="note-20" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="21" data-search="brew &amp; pour 11 talavera rd, macquarie park nsw 2113, australia talavera rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-21" aria-label="Visited Brew &amp; Pour"></div>
+        <div>
+          <div class="stop-title">21. Brew &amp; Pour</div>
+          <div class="addr">11 Talavera Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9887 3198</div>
+          <div class="note">Talavera Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Brew+%26+Pour+11+Talavera+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298873198">Call</a>
+          </div>
+          <textarea id="note-21" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="22" data-search="dante&#x27;s espresso bar 118 talavera rd, macquarie park nsw 2113, australia talavera rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-22" aria-label="Visited Dante&#x27;s Espresso Bar"></div>
+        <div>
+          <div class="stop-title">22. Dante&#x27;s Espresso Bar</div>
+          <div class="addr">118 Talavera Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: Check original list</div>
+          <div class="note">Talavera Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Dante%27s+Espresso+Bar+118+Talavera+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:">Call</a>
+          </div>
+          <textarea id="note-22" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="23" data-search="baptistcare hopecleaning unit 3/157 balaclava rd, macquarie park nsw 2113, australia call first if it looks like office/service-only.">
+        <div><input class="check" type="checkbox" id="stop-23" aria-label="Visited BaptistCare HopeCleaning"></div>
+        <div>
+          <div class="stop-title">23. BaptistCare HopeCleaning</div>
+          <div class="addr">Unit 3/157 Balaclava Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 1300 296 570</div>
+          <div class="note">Call first if it looks like office/service-only.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=BaptistCare+HopeCleaning+Unit+3%2F157+Balaclava+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:1300296570">Call</a>
+          </div>
+          <textarea id="note-23" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="3. North Ryde / Coxs Rd / Blenheim / Flinders">
+    <div class="route-head">
+      <h2>3. North Ryde / Coxs Rd / Blenheim / Flinders</h2>
+      <p>Coxs Rd and nearby North Ryde streets. Many stops are close enough to park once around Coxs Rd and walk parts of it.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=6A%2F277+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia&destination=5+Whiteside+St%2C+North+Ryde+NSW+2113%2C+Australia&travelmode=driving&waypoints=400+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia%7C185+Lane+Cove+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C1%2F134+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C118+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7CShop+1%2F195+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C203+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C211+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C19%2F213+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="24" data-search="the local cafe macquarie park 6a/277 lane cove rd, macquarie park nsw 2113, australia start lane cove rd side.">
+        <div><input class="check" type="checkbox" id="stop-24" aria-label="Visited The Local Cafe Macquarie Park"></div>
+        <div>
+          <div class="stop-title">24. The Local Cafe Macquarie Park</div>
+          <div class="addr">6A/277 Lane Cove Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0414 770 928</div>
+          <div class="note">Start Lane Cove Rd side.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=The+Local+Cafe+Macquarie+Park+6A%2F277+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0414770928">Call</a>
+          </div>
+          <textarea id="note-24" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="25" data-search="blue diamond carwash 400 lane cove rd, macquarie park nsw 2113, australia lane cove rd.">
+        <div><input class="check" type="checkbox" id="stop-25" aria-label="Visited Blue Diamond Carwash"></div>
+        <div>
+          <div class="stop-title">25. Blue Diamond Carwash</div>
+          <div class="addr">400 Lane Cove Rd, Macquarie Park NSW 2113, Australia</div>
+          <div class="meta">Phone: 0413 469 567</div>
+          <div class="note">Lane Cove Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Blue+Diamond+Carwash+400+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0413469567">Call</a>
+          </div>
+          <textarea id="note-25" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="26" data-search="ryde corner medical centre 185 lane cove rd, north ryde nsw 2113, australia lane cove rd.">
+        <div><input class="check" type="checkbox" id="stop-26" aria-label="Visited Ryde Corner Medical Centre"></div>
+        <div>
+          <div class="stop-title">26. Ryde Corner Medical Centre</div>
+          <div class="addr">185 Lane Cove Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 7240 1941</div>
+          <div class="note">Lane Cove Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Ryde+Corner+Medical+Centre+185+Lane+Cove+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0272401941">Call</a>
+          </div>
+          <textarea id="note-26" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="27" data-search="dr richard s vici dental surgery 1/134 coxs rd, north ryde nsw 2113, australia coxs rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-27" aria-label="Visited Dr Richard S Vici DENTAL SURGERY"></div>
+        <div>
+          <div class="stop-title">27. Dr Richard S Vici DENTAL SURGERY</div>
+          <div class="addr">1/134 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 5662</div>
+          <div class="note">Coxs Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Dr+Richard+S+Vici+DENTAL+SURGERY+1%2F134+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298885662">Call</a>
+          </div>
+          <textarea id="note-27" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="28" data-search="terry ryan automotive services pty ltd 118 coxs rd, north ryde nsw 2113, australia coxs rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-28" aria-label="Visited Terry Ryan Automotive Services Pty Ltd"></div>
+        <div>
+          <div class="stop-title">28. Terry Ryan Automotive Services Pty Ltd</div>
+          <div class="addr">118 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 5198</div>
+          <div class="note">Coxs Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Terry+Ryan+Automotive+Services+Pty+Ltd+118+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298885198">Call</a>
+          </div>
+          <textarea id="note-28" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="29" data-search="flame cafe north ryde shop 1/195 coxs rd, north ryde nsw 2113, australia coxs rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-29" aria-label="Visited Flame Cafe North Ryde"></div>
+        <div>
+          <div class="stop-title">29. Flame Cafe North Ryde</div>
+          <div class="addr">Shop 1/195 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 5286</div>
+          <div class="note">Coxs Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Flame+Cafe+North+Ryde+Shop+1%2F195+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298885286">Call</a>
+          </div>
+          <textarea id="note-29" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="30" data-search="café sabu 203 coxs rd, north ryde nsw 2113, australia coxs rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-30" aria-label="Visited Café SaBu"></div>
+        <div>
+          <div class="stop-title">30. Café SaBu</div>
+          <div class="addr">203 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 9901</div>
+          <div class="note">Coxs Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+SaBu+203+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298889901">Call</a>
+          </div>
+          <textarea id="note-30" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="31" data-search="twin scissors barber shop 211 coxs rd, north ryde nsw 2113, australia coxs rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-31" aria-label="Visited Twin Scissors Barber Shop"></div>
+        <div>
+          <div class="stop-title">31. Twin Scissors Barber Shop</div>
+          <div class="addr">211 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0414 444 042</div>
+          <div class="note">Coxs Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Twin+Scissors+Barber+Shop+211+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0414444042">Call</a>
+          </div>
+          <textarea id="note-31" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="32" data-search="t19 nails studio 19/213 coxs rd, north ryde nsw 2113, australia same coxs rd block.">
+        <div><input class="check" type="checkbox" id="stop-32" aria-label="Visited T19 Nails Studio"></div>
+        <div>
+          <div class="stop-title">32. T19 Nails Studio</div>
+          <div class="addr">19/213 Coxs Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0451 638 639</div>
+          <div class="note">Same Coxs Rd block.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=T19+Nails+Studio+19%2F213+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0451638639">Call</a>
+          </div>
+          <textarea id="note-32" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="33" data-search="qt lashes 5 whiteside st, north ryde nsw 2113, australia near coxs rd.">
+        <div><input class="check" type="checkbox" id="stop-33" aria-label="Visited QT lashes"></div>
+        <div>
+          <div class="stop-title">33. QT lashes</div>
+          <div class="addr">5 Whiteside St, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0433 223 614</div>
+          <div class="note">Near Coxs Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=QT+lashes+5+Whiteside+St%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0433223614">Call</a>
+          </div>
+          <textarea id="note-33" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="34" data-search="by gold bar beauty 44 coxs rd, east ryde nsw 2113, australia east ryde side of coxs rd.">
+        <div><input class="check" type="checkbox" id="stop-34" aria-label="Visited By Gold Bar Beauty"></div>
+        <div>
+          <div class="stop-title">34. By Gold Bar Beauty</div>
+          <div class="addr">44 Coxs Rd, East Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0450 088 930</div>
+          <div class="note">East Ryde side of Coxs Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=By+Gold+Bar+Beauty+44+Coxs+Rd%2C+East+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0450088930">Call</a>
+          </div>
+          <textarea id="note-34" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="35" data-search="cafe trebbiano 3 julius ave, north ryde nsw 2112, australia julius ave.">
+        <div><input class="check" type="checkbox" id="stop-35" aria-label="Visited Cafe Trebbiano"></div>
+        <div>
+          <div class="stop-title">35. Cafe Trebbiano</div>
+          <div class="addr">3 Julius Ave, North Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0451 866 577</div>
+          <div class="note">Julius Ave.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Cafe+Trebbiano+3+Julius+Ave%2C+North+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0451866577">Call</a>
+          </div>
+          <textarea id="note-35" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="36" data-search="hair attack 2/2 flinders rd, north ryde nsw 2113, australia same small stop as flinder&#x27;s cafe.">
+        <div><input class="check" type="checkbox" id="stop-36" aria-label="Visited Hair Attack"></div>
+        <div>
+          <div class="stop-title">36. Hair Attack</div>
+          <div class="addr">2/2 Flinders Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 8964 1444</div>
+          <div class="note">Same small stop as Flinder&#x27;s Cafe.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Hair+Attack+2%2F2+Flinders+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0289641444">Call</a>
+          </div>
+          <textarea id="note-36" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="37" data-search="flinder&#x27;s cafe 4 flinders rd, north ryde nsw 2113, australia same flinders rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-37" aria-label="Visited Flinder&#x27;s Cafe"></div>
+        <div>
+          <div class="stop-title">37. Flinder&#x27;s Cafe</div>
+          <div class="addr">4 Flinders Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0404 679 207</div>
+          <div class="note">Same Flinders Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Flinder%27s+Cafe+4+Flinders+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0404679207">Call</a>
+          </div>
+          <textarea id="note-37" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="38" data-search="nn&#x27;s beauty and nails 20 blenheim rd, north ryde nsw 2113, australia blenheim cluster.">
+        <div><input class="check" type="checkbox" id="stop-38" aria-label="Visited NN&#x27;s Beauty And Nails"></div>
+        <div>
+          <div class="stop-title">38. NN&#x27;s Beauty And Nails</div>
+          <div class="addr">20 Blenheim Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9889 4427</div>
+          <div class="note">Blenheim cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=NN%27s+Beauty+And+Nails+20+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298894427">Call</a>
+          </div>
+          <textarea id="note-38" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="39" data-search="kyoto emporium 3/22 blenheim rd, north ryde nsw 2113, australia blenheim cluster.">
+        <div><input class="check" type="checkbox" id="stop-39" aria-label="Visited Kyoto Emporium"></div>
+        <div>
+          <div class="stop-title">39. Kyoto Emporium</div>
+          <div class="addr">3/22 Blenheim Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0403 644 290</div>
+          <div class="note">Blenheim cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Emporium+3%2F22+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0403644290">Call</a>
+          </div>
+          <textarea id="note-39" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="40" data-search="tilt ryde 2/22 blenheim rd, north ryde nsw 2113, australia blenheim cluster.">
+        <div><input class="check" type="checkbox" id="stop-40" aria-label="Visited Tilt Ryde"></div>
+        <div>
+          <div class="stop-title">40. Tilt Ryde</div>
+          <div class="addr">2/22 Blenheim Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 7901 8827</div>
+          <div class="note">Blenheim cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Tilt+Ryde+2%2F22+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0279018827">Call</a>
+          </div>
+          <textarea id="note-40" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="41" data-search="the glow lounge 1 network pl, north ryde nsw 2113, australia nearby business park.">
+        <div><input class="check" type="checkbox" id="stop-41" aria-label="Visited The Glow Lounge"></div>
+        <div>
+          <div class="stop-title">41. The Glow Lounge</div>
+          <div class="addr">1 Network Pl, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: Check original list</div>
+          <div class="note">Nearby business park.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=The+Glow+Lounge+1+Network+Pl%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:">Call</a>
+          </div>
+          <textarea id="note-41" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="4. Marsfield / Eastwood / Epping / Carlingford / Gordon">
+    <div class="route-head">
+      <h2>4. Marsfield / Eastwood / Epping / Carlingford / Gordon</h2>
+      <p>Driving route. Several are service/home-style businesses; call first where noted.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=4+Winston+St%2C+Marsfield+NSW+2122%2C+Australia&destination=20+Angophora+Pl%2C+Pennant+Hills+NSW+2120%2C+Australia&travelmode=driving&waypoints=123E+Kent+Rd%2C+Marsfield+NSW+2122%2C+Australia%7C38+Kent+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C5+Delhi+Rd%2C+North+Ryde+NSW+2113%2C+Australia%7C11%2F288+Malton+Rd%2C+North+Epping+NSW+2121%2C+Australia%7C26+Ferntree+Pl%2C+Epping+NSW+2122%2C+Australia%7CUpstairs%2F217+Rowe+St%2C+Eastwood+NSW+2122%2C+Australia%7CShop+3%2F7+Rutledge+St%2C+Eastwood+NSW+2122%2C+Australia%7CShop+115%2F809+Pennant+Hills+Rd%2C+Carlingford+NSW+2118%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="42" data-search="garage barberz 4 winston st, marsfield nsw 2122, australia marsfield start.">
+        <div><input class="check" type="checkbox" id="stop-42" aria-label="Visited Garage Barberz"></div>
+        <div>
+          <div class="stop-title">42. Garage Barberz</div>
+          <div class="addr">4 Winston St, Marsfield NSW 2122, Australia</div>
+          <div class="meta">Phone: 0435 415 215</div>
+          <div class="note">Marsfield start.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Garage+Barberz+4+Winston+St%2C+Marsfield+NSW+2122%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0435415215">Call</a>
+          </div>
+          <textarea id="note-42" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="43" data-search="a.r.m automotive mobile mechanic 123e kent rd, marsfield nsw 2122, australia mobile mechanic — call first before driving.">
+        <div><input class="check" type="checkbox" id="stop-43" aria-label="Visited A.R.M Automotive Mobile Mechanic"></div>
+        <div>
+          <div class="stop-title">43. A.R.M Automotive Mobile Mechanic</div>
+          <div class="addr">123E Kent Rd, Marsfield NSW 2122, Australia</div>
+          <div class="meta">Phone: 0450 407 160</div>
+          <div class="note">Mobile mechanic — call first before driving.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=A.R.M+Automotive+Mobile+Mechanic+123E+Kent+Rd%2C+Marsfield+NSW+2122%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0450407160">Call</a>
+          </div>
+          <textarea id="note-43" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="44" data-search="kent road auto service centre 38 kent rd, north ryde nsw 2113, australia kent rd.">
+        <div><input class="check" type="checkbox" id="stop-44" aria-label="Visited Kent Road Auto Service Centre"></div>
+        <div>
+          <div class="stop-title">44. Kent Road Auto Service Centre</div>
+          <div class="addr">38 Kent Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9888 7332</div>
+          <div class="note">Kent Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Kent+Road+Auto+Service+Centre+38+Kent+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298887332">Call</a>
+          </div>
+          <textarea id="note-44" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="45" data-search="curli by lilian 5 delhi rd, north ryde nsw 2113, australia likely small/salon appointment style — call if unsure.">
+        <div><input class="check" type="checkbox" id="stop-45" aria-label="Visited CURLI by Lilian"></div>
+        <div>
+          <div class="stop-title">45. CURLI by Lilian</div>
+          <div class="addr">5 Delhi Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0431 146 661</div>
+          <div class="note">Likely small/salon appointment style — call if unsure.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=CURLI+by+Lilian+5+Delhi+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0431146661">Call</a>
+          </div>
+          <textarea id="note-45" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="46" data-search="north epping auto repair 11/288 malton rd, north epping nsw 2121, australia north epping.">
+        <div><input class="check" type="checkbox" id="stop-46" aria-label="Visited North Epping Auto Repair"></div>
+        <div>
+          <div class="stop-title">46. North Epping Auto Repair</div>
+          <div class="addr">11/288 Malton Rd, North Epping NSW 2121, Australia</div>
+          <div class="meta">Phone: (02) 9876 5383</div>
+          <div class="note">North Epping.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=North+Epping+Auto+Repair+11%2F288+Malton+Rd%2C+North+Epping+NSW+2121%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298765383">Call</a>
+          </div>
+          <textarea id="note-46" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="47" data-search="with painting 26 ferntree pl, epping nsw 2122, australia call first — trade/home service.">
+        <div><input class="check" type="checkbox" id="stop-47" aria-label="Visited WITH Painting"></div>
+        <div>
+          <div class="stop-title">47. WITH Painting</div>
+          <div class="addr">26 Ferntree Pl, Epping NSW 2122, Australia</div>
+          <div class="meta">Phone: 0431 545 543</div>
+          <div class="note">Call first — trade/home service.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=WITH+Painting+26+Ferntree+Pl%2C+Epping+NSW+2122%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0431545543">Call</a>
+          </div>
+          <textarea id="note-47" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="48" data-search="hair by choi upstairs/217 rowe st, eastwood nsw 2122, australia eastwood shops.">
+        <div><input class="check" type="checkbox" id="stop-48" aria-label="Visited Hair by Choi"></div>
+        <div>
+          <div class="stop-title">48. Hair by Choi</div>
+          <div class="addr">Upstairs/217 Rowe St, Eastwood NSW 2122, Australia</div>
+          <div class="meta">Phone: 0431 399 341</div>
+          <div class="note">Eastwood shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Hair+by+Choi+Upstairs%2F217+Rowe+St%2C+Eastwood+NSW+2122%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0431399341">Call</a>
+          </div>
+          <textarea id="note-48" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="49" data-search="athvenus nails salon (eastwood) shop 3/7 rutledge st, eastwood nsw 2122, australia eastwood shops.">
+        <div><input class="check" type="checkbox" id="stop-49" aria-label="Visited Athvenus Nails Salon (Eastwood)"></div>
+        <div>
+          <div class="stop-title">49. Athvenus Nails Salon (Eastwood)</div>
+          <div class="addr">Shop 3/7 Rutledge St, Eastwood NSW 2122, Australia</div>
+          <div class="meta">Phone: (02) 9804 1945</div>
+          <div class="note">Eastwood shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Athvenus+Nails+Salon+%28Eastwood%29+Shop+3%2F7+Rutledge+St%2C+Eastwood+NSW+2122%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298041945">Call</a>
+          </div>
+          <textarea id="note-49" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="50" data-search="ocean nails carlingford shop 115/809 pennant hills rd, carlingford nsw 2118, australia carlingford.">
+        <div><input class="check" type="checkbox" id="stop-50" aria-label="Visited Ocean Nails Carlingford"></div>
+        <div>
+          <div class="stop-title">50. Ocean Nails Carlingford</div>
+          <div class="addr">Shop 115/809 Pennant Hills Rd, Carlingford NSW 2118, Australia</div>
+          <div class="meta">Phone: 0493 681 666</div>
+          <div class="note">Carlingford.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Ocean+Nails+Carlingford+Shop+115%2F809+Pennant+Hills+Rd%2C+Carlingford+NSW+2118%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0493681666">Call</a>
+          </div>
+          <textarea id="note-50" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="51" data-search="kda tiling - all kinds of tiling 20 angophora pl, pennant hills nsw 2120, australia call first — trade/home service.">
+        <div><input class="check" type="checkbox" id="stop-51" aria-label="Visited KDA Tiling - All Kinds of Tiling"></div>
+        <div>
+          <div class="stop-title">51. KDA Tiling - All Kinds of Tiling</div>
+          <div class="addr">20 Angophora Pl, Pennant Hills NSW 2120, Australia</div>
+          <div class="meta">Phone: 0430 131 392</div>
+          <div class="note">Call first — trade/home service.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=KDA+Tiling+-+All+Kinds+of+Tiling+20+Angophora+Pl%2C+Pennant+Hills+NSW+2120%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0430131392">Call</a>
+          </div>
+          <textarea id="note-51" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="52" data-search="dreamwood home services rosedale rd, gordon nsw 2072, australia call first — home service / not likely walk-in.">
+        <div><input class="check" type="checkbox" id="stop-52" aria-label="Visited Dreamwood Home Services"></div>
+        <div>
+          <div class="stop-title">52. Dreamwood Home Services</div>
+          <div class="addr">Rosedale Rd, Gordon NSW 2072, Australia</div>
+          <div class="meta">Phone: 0416 790 414</div>
+          <div class="note">Call first — home service / not likely walk-in.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Dreamwood+Home+Services+Rosedale+Rd%2C+Gordon+NSW+2072%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0416790414">Call</a>
+          </div>
+          <textarea id="note-52" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="5. West Ryde station / Victoria Rd / hair / cafes">
+    <div class="route-head">
+      <h2>5. West Ryde station / Victoria Rd / hair / cafes</h2>
+      <p>Start at West Ryde station/W Parade, then Victoria Rd and North Rd. Good half-day route.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=4+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia&destination=4%2F5A+Chatham+Rd%2C+West+Ryde+NSW+2114%2C+Australia&travelmode=driving&waypoints=8+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia%7C17+Rhodes+St%2C+West+Ryde+NSW+2114%2C+Australia%7C17+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia%7C13+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia%7C989+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia%7CShop+1%2F995+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia%7C1007+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia%7C1017%2F1019+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="53" data-search="4 station &amp; co west ryde 4 w parade, west ryde nsw 2114, australia west ryde station cluster.">
+        <div><input class="check" type="checkbox" id="stop-53" aria-label="Visited 4 Station &amp; Co West Ryde"></div>
+        <div>
+          <div class="stop-title">53. 4 Station &amp; Co West Ryde</div>
+          <div class="addr">4 W Parade, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: 0433 270 377</div>
+          <div class="note">West Ryde station cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=4+Station+%26+Co+West+Ryde+4+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0433270377">Call</a>
+          </div>
+          <textarea id="note-53" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="54" data-search="cafe once upon a time 8 w parade, west ryde nsw 2114, australia same w parade cluster.">
+        <div><input class="check" type="checkbox" id="stop-54" aria-label="Visited Cafe Once Upon a Time"></div>
+        <div>
+          <div class="stop-title">54. Cafe Once Upon a Time</div>
+          <div class="addr">8 W Parade, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 9809 5343</div>
+          <div class="note">Same W Parade cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Cafe+Once+Upon+a+Time+8+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298095343">Call</a>
+          </div>
+          <textarea id="note-54" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="55" data-search="dj borg automotive 17 rhodes st, west ryde nsw 2114, australia near west ryde station.">
+        <div><input class="check" type="checkbox" id="stop-55" aria-label="Visited DJ Borg Automotive"></div>
+        <div>
+          <div class="stop-title">55. DJ Borg Automotive</div>
+          <div class="addr">17 Rhodes St, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 9807 6587</div>
+          <div class="note">Near West Ryde station.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=DJ+Borg+Automotive+17+Rhodes+St%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298076587">Call</a>
+          </div>
+          <textarea id="note-55" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="56" data-search="kablan mowad &amp; sons 17 mellor st, west ryde nsw 2114, australia mellor st cluster.">
+        <div><input class="check" type="checkbox" id="stop-56" aria-label="Visited Kablan Mowad &amp; Sons"></div>
+        <div>
+          <div class="stop-title">56. Kablan Mowad &amp; Sons</div>
+          <div class="addr">17 Mellor St, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 9808 2869</div>
+          <div class="note">Mellor St cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Kablan+Mowad+%26+Sons+17+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298082869">Call</a>
+          </div>
+          <textarea id="note-56" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="57" data-search="lpd automotive 13 mellor st, west ryde nsw 2114, australia mellor st cluster.">
+        <div><input class="check" type="checkbox" id="stop-57" aria-label="Visited LPD Automotive"></div>
+        <div>
+          <div class="stop-title">57. LPD Automotive</div>
+          <div class="addr">13 Mellor St, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 9807 4350</div>
+          <div class="note">Mellor St cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=LPD+Automotive+13+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298074350">Call</a>
+          </div>
+          <textarea id="note-57" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="58" data-search="omega nails &amp; beauty west ryde 989 victoria rd, west ryde nsw 2114, australia victoria rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-58" aria-label="Visited Omega Nails &amp; Beauty West Ryde"></div>
+        <div>
+          <div class="stop-title">58. Omega Nails &amp; Beauty West Ryde</div>
+          <div class="addr">989 Victoria Rd, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 8542 1993</div>
+          <div class="note">Victoria Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Omega+Nails+%26+Beauty+West+Ryde+989+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0285421993">Call</a>
+          </div>
+          <textarea id="note-58" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="59" data-search="garo&#x27;s hairstyle shop 1/995 victoria rd, west ryde nsw 2114, australia victoria rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-59" aria-label="Visited Garo&#x27;s hairstyle"></div>
+        <div>
+          <div class="stop-title">59. Garo&#x27;s hairstyle</div>
+          <div class="addr">Shop 1/995 Victoria Rd, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: 0407 000 616</div>
+          <div class="note">Victoria Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Garo%27s+hairstyle+Shop+1%2F995+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0407000616">Call</a>
+          </div>
+          <textarea id="note-59" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="60" data-search="breakpoint cafe 1007 victoria rd, west ryde nsw 2114, australia victoria rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-60" aria-label="Visited Breakpoint cafe"></div>
+        <div>
+          <div class="stop-title">60. Breakpoint cafe</div>
+          <div class="addr">1007 Victoria Rd, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: 0451 007 544</div>
+          <div class="note">Victoria Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Breakpoint+cafe+1007+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0451007544">Call</a>
+          </div>
+          <textarea id="note-60" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="61" data-search="js hair 1017/1019 victoria rd, west ryde nsw 2114, australia victoria rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-61" aria-label="Visited JS HAIR"></div>
+        <div>
+          <div class="stop-title">61. JS HAIR</div>
+          <div class="addr">1017/1019 Victoria Rd, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: 0406 160 049</div>
+          <div class="note">Victoria Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=JS+HAIR+1017%2F1019+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0406160049">Call</a>
+          </div>
+          <textarea id="note-61" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="62" data-search="hair we go at kelly&#x27;s 4/5a chatham rd, west ryde nsw 2114, australia west ryde.">
+        <div><input class="check" type="checkbox" id="stop-62" aria-label="Visited Hair We Go at Kelly&#x27;s"></div>
+        <div>
+          <div class="stop-title">62. Hair We Go at Kelly&#x27;s</div>
+          <div class="addr">4/5A Chatham Rd, West Ryde NSW 2114, Australia</div>
+          <div class="meta">Phone: (02) 8970 8149</div>
+          <div class="note">West Ryde.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Hair+We+Go+at+Kelly%27s+4%2F5A+Chatham+Rd%2C+West+Ryde+NSW+2114%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0289708149">Call</a>
+          </div>
+          <textarea id="note-62" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="63" data-search="hair image by julie 117 north rd, ryde nsw 2112, australia north rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-63" aria-label="Visited Hair Image by Julie"></div>
+        <div>
+          <div class="stop-title">63. Hair Image by Julie</div>
+          <div class="addr">117 North Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9878 4372</div>
+          <div class="note">North Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Hair+Image+by+Julie+117+North+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298784372">Call</a>
+          </div>
+          <textarea id="note-63" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="64" data-search="midway barber 117c north rd, ryde nsw 2112, australia north rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-64" aria-label="Visited MIDWAY BARBER"></div>
+        <div>
+          <div class="stop-title">64. MIDWAY BARBER</div>
+          <div class="addr">117C North Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: Check original list</div>
+          <div class="note">North Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=MIDWAY+BARBER+117C+North+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:">Call</a>
+          </div>
+          <textarea id="note-64" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="65" data-search="midway autoport 117 north rd, ryde nsw 2112, australia same north rd stop.">
+        <div><input class="check" type="checkbox" id="stop-65" aria-label="Visited Midway Autoport"></div>
+        <div>
+          <div class="stop-title">65. Midway Autoport</div>
+          <div class="addr">117 North Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9878 2592</div>
+          <div class="note">Same North Rd stop.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Midway+Autoport+117+North+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298782592">Call</a>
+          </div>
+          <textarea id="note-65" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops">
+    <div class="route-head">
+      <h2>6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops</h2>
+      <p>Ryde/Top Ryde route focused on workshops, barbers, beauty, and shopping-centre stop.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=190+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia&destination=38+Lane+Cove+Rd%2C+Top+Ryde+NSW+2112%2C+Australia&travelmode=driving&waypoints=103+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia%7C332+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia%7C1+Princes+St%2C+Ryde+NSW+2112%2C+Australia%7C35+Nancarrow+Ave%2C+Ryde+NSW+2112%2C+Australia%7C7+Salerwong+Pl%2C+Ryde+NSW+2112%2C+Australia%7CPorter+St%2C+Ryde+NSW+2112%2C+Australia%7C748+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia%7C744+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="66" data-search="sevan barber 190 blaxland rd, ryde nsw 2112, australia blaxland rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-66" aria-label="Visited Sevan Barber"></div>
+        <div>
+          <div class="stop-title">66. Sevan Barber</div>
+          <div class="addr">190 Blaxland Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0417 020 502</div>
+          <div class="note">Blaxland Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Sevan+Barber+190+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0417020502">Call</a>
+          </div>
+          <textarea id="note-66" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="67" data-search="nyamka nail and lash 103 blaxland rd, ryde nsw 2112, australia blaxland rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-67" aria-label="Visited Nyamka nail and lash"></div>
+        <div>
+          <div class="stop-title">67. Nyamka nail and lash</div>
+          <div class="addr">103 Blaxland Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: Check original list</div>
+          <div class="note">Blaxland Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Nyamka+nail+and+lash+103+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:">Call</a>
+          </div>
+          <textarea id="note-67" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="68" data-search="ryde automotives 332 blaxland rd, ryde nsw 2112, australia blaxland rd.">
+        <div><input class="check" type="checkbox" id="stop-68" aria-label="Visited Ryde Automotives"></div>
+        <div>
+          <div class="stop-title">68. Ryde Automotives</div>
+          <div class="addr">332 Blaxland Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9809 0999</div>
+          <div class="note">Blaxland Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Ryde+Automotives+332+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298090999">Call</a>
+          </div>
+          <textarea id="note-68" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="69" data-search="locked inn 1 princes st, ryde nsw 2112, australia ryde.">
+        <div><input class="check" type="checkbox" id="stop-69" aria-label="Visited Locked Inn"></div>
+        <div>
+          <div class="stop-title">69. Locked Inn</div>
+          <div class="addr">1 Princes St, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: Check original list</div>
+          <div class="note">Ryde.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Locked+Inn+1+Princes+St%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:">Call</a>
+          </div>
+          <textarea id="note-69" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="70" data-search="lrb smash repairs 35 nancarrow ave, ryde nsw 2112, australia ryde workshop.">
+        <div><input class="check" type="checkbox" id="stop-70" aria-label="Visited LRB Smash Repairs"></div>
+        <div>
+          <div class="stop-title">70. LRB Smash Repairs</div>
+          <div class="addr">35 Nancarrow Ave, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9808 4600</div>
+          <div class="note">Ryde workshop.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=LRB+Smash+Repairs+35+Nancarrow+Ave%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298084600">Call</a>
+          </div>
+          <textarea id="note-70" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="71" data-search="direct autocare - mobile mechanic 7 salerwong pl, ryde nsw 2112, australia mobile mechanic — call first before driving.">
+        <div><input class="check" type="checkbox" id="stop-71" aria-label="Visited DIRECT AUTOCARE - Mobile Mechanic"></div>
+        <div>
+          <div class="stop-title">71. DIRECT AUTOCARE - Mobile Mechanic</div>
+          <div class="addr">7 Salerwong Pl, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0455 468 824</div>
+          <div class="note">Mobile mechanic — call first before driving.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=DIRECT+AUTOCARE+-+Mobile+Mechanic+7+Salerwong+Pl%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0455468824">Call</a>
+          </div>
+          <textarea id="note-71" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="72" data-search="ryde car services porter st, ryde nsw 2112, australia call first; address may not be a shopfront.">
+        <div><input class="check" type="checkbox" id="stop-72" aria-label="Visited Ryde Car Services"></div>
+        <div>
+          <div class="stop-title">72. Ryde Car Services</div>
+          <div class="addr">Porter St, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0403 104 616</div>
+          <div class="note">Call first; address may not be a shopfront.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Ryde+Car+Services+Porter+St%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0403104616">Call</a>
+          </div>
+          <textarea id="note-72" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="73" data-search="service plus automotive 748 victoria rd, ryde nsw 2112, australia victoria rd workshop cluster.">
+        <div><input class="check" type="checkbox" id="stop-73" aria-label="Visited Service Plus Automotive"></div>
+        <div>
+          <div class="stop-title">73. Service Plus Automotive</div>
+          <div class="addr">748 Victoria Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9807 8389</div>
+          <div class="note">Victoria Rd workshop cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Service+Plus+Automotive+748+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298078389">Call</a>
+          </div>
+          <textarea id="note-73" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="74" data-search="tibby rose auto electrical service pty ltd 744 victoria rd, ryde nsw 2112, australia same victoria rd cluster.">
+        <div><input class="check" type="checkbox" id="stop-74" aria-label="Visited Tibby Rose Auto Electrical Service PTY LTD"></div>
+        <div>
+          <div class="stop-title">74. Tibby Rose Auto Electrical Service PTY LTD</div>
+          <div class="addr">744 Victoria Rd, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0404 056 686</div>
+          <div class="note">Same Victoria Rd cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Tibby+Rose+Auto+Electrical+Service+PTY+LTD+744+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0404056686">Call</a>
+          </div>
+          <textarea id="note-74" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="75" data-search="quick-fit mufflers brakes &amp; suspension 38 lane cove rd, top ryde nsw 2112, australia top ryde / lane cove rd.">
+        <div><input class="check" type="checkbox" id="stop-75" aria-label="Visited Quick-Fit Mufflers Brakes &amp; Suspension"></div>
+        <div>
+          <div class="stop-title">75. Quick-Fit Mufflers Brakes &amp; Suspension</div>
+          <div class="addr">38 Lane Cove Rd, Top Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: (02) 9807 6099</div>
+          <div class="note">Top Ryde / Lane Cove Rd.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Quick-Fit+Mufflers+Brakes+%26+Suspension+38+Lane+Cove+Rd%2C+Top+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0298076099">Call</a>
+          </div>
+          <textarea id="note-75" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="76" data-search="colour touch top ryde top ryde shopping centre, shop 1014, ryde nsw 2112, australia top ryde shopping centre.">
+        <div><input class="check" type="checkbox" id="stop-76" aria-label="Visited Colour Touch Top Ryde"></div>
+        <div>
+          <div class="stop-title">76. Colour Touch Top Ryde</div>
+          <div class="addr">Top Ryde Shopping Centre, Shop 1014, Ryde NSW 2112, Australia</div>
+          <div class="meta">Phone: 0435 821 119</div>
+          <div class="note">Top Ryde Shopping Centre.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Colour+Touch+Top+Ryde+Top+Ryde+Shopping+Centre%2C+Shop+1014%2C+Ryde+NSW+2112%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0435821119">Call</a>
+          </div>
+          <textarea id="note-76" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route" data-route="7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman">
+    <div class="route-head">
+      <h2>7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman</h2>
+      <p>Spread-out driving route. Do this separately from West Ryde to avoid criss-crossing.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=8+Sager+Pl%2C+East+Ryde+NSW+2113%2C+Australia&destination=3%2F203+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia&travelmode=driving&waypoints=113+Melba+Dr%2C+East+Ryde+NSW+2113%2C+Australia%7C510%2F2+Burley+St%2C+Lane+Cove+North+NSW+2066%2C+Australia%7C43-45+Burns+Bay+Rd%2C+Lane+Cove+NSW+2066%2C+Australia%7CShop+1a%2F83+Longueville+Rd%2C+Lane+Cove+NSW+2066%2C+Australia%7C110-114+Hampden+Rd%2C+Artarmon+NSW+2064%2C+Australia%7C31+Mosman+St%2C+Mosman+NSW+2088%2C+Australia%7CShop+5%2F225-227+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop" data-id="77" data-search="kana sushi east ryde &amp; fox and bird cafe 8 sager pl, east ryde nsw 2113, australia east ryde cluster.">
+        <div><input class="check" type="checkbox" id="stop-77" aria-label="Visited Kana Sushi East Ryde &amp; Fox and Bird Cafe"></div>
+        <div>
+          <div class="stop-title">77. Kana Sushi East Ryde &amp; Fox and Bird Cafe</div>
+          <div class="addr">8 Sager Pl, East Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: (02) 9183 4898</div>
+          <div class="note">East Ryde cluster.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Kana+Sushi+East+Ryde+%26+Fox+and+Bird+Cafe+8+Sager+Pl%2C+East+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0291834898">Call</a>
+          </div>
+          <textarea id="note-77" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="78" data-search="house of hair on melba! mobile hairdresser 113 melba dr, east ryde nsw 2113, australia mobile hairdresser — call first before driving.">
+        <div><input class="check" type="checkbox" id="stop-78" aria-label="Visited HOUSE OF HAIR ON MELBA! Mobile Hairdresser"></div>
+        <div>
+          <div class="stop-title">78. HOUSE OF HAIR ON MELBA! Mobile Hairdresser</div>
+          <div class="addr">113 Melba Dr, East Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0419 298 904</div>
+          <div class="note">Mobile hairdresser — call first before driving.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=HOUSE+OF+HAIR+ON+MELBA%21+Mobile+Hairdresser+113+Melba+Dr%2C+East+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0419298904">Call</a>
+          </div>
+          <textarea id="note-78" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="79" data-search="the cove handyman services 510/2 burley st, lane cove north nsw 2066, australia call first — handyman/service address.">
+        <div><input class="check" type="checkbox" id="stop-79" aria-label="Visited The Cove Handyman Services"></div>
+        <div>
+          <div class="stop-title">79. The Cove Handyman Services</div>
+          <div class="addr">510/2 Burley St, Lane Cove North NSW 2066, Australia</div>
+          <div class="meta">Phone: 0405 627 798</div>
+          <div class="note">Call first — handyman/service address.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=The+Cove+Handyman+Services+510%2F2+Burley+St%2C+Lane+Cove+North+NSW+2066%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0405627798">Call</a>
+          </div>
+          <textarea id="note-79" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="80" data-search="natural nails design 43-45 burns bay rd, lane cove nsw 2066, australia lane cove shops.">
+        <div><input class="check" type="checkbox" id="stop-80" aria-label="Visited Natural Nails Design"></div>
+        <div>
+          <div class="stop-title">80. Natural Nails Design</div>
+          <div class="addr">43-45 Burns Bay Rd, Lane Cove NSW 2066, Australia</div>
+          <div class="meta">Phone: (02) 9428 3381</div>
+          <div class="note">Lane Cove shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Natural+Nails+Design+43-45+Burns+Bay+Rd%2C+Lane+Cove+NSW+2066%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0294283381">Call</a>
+          </div>
+          <textarea id="note-80" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="81" data-search="yf beauty lane cove / you first beauty &amp; nails shop 1a/83 longueville rd, lane cove nsw 2066, australia lane cove shops.">
+        <div><input class="check" type="checkbox" id="stop-81" aria-label="Visited YF Beauty Lane Cove / You First Beauty &amp; Nails"></div>
+        <div>
+          <div class="stop-title">81. YF Beauty Lane Cove / You First Beauty &amp; Nails</div>
+          <div class="addr">Shop 1a/83 Longueville Rd, Lane Cove NSW 2066, Australia</div>
+          <div class="meta">Phone: (02) 9007 1128</div>
+          <div class="note">Lane Cove shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=YF+Beauty+Lane+Cove+%2F+You+First+Beauty+%26+Nails+Shop+1a%2F83+Longueville+Rd%2C+Lane+Cove+NSW+2066%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0290071128">Call</a>
+          </div>
+          <textarea id="note-81" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="82" data-search="artarmon jane nails &amp; beauty 110-114 hampden rd, artarmon nsw 2064, australia artarmon.">
+        <div><input class="check" type="checkbox" id="stop-82" aria-label="Visited Artarmon Jane Nails &amp; Beauty"></div>
+        <div>
+          <div class="stop-title">82. Artarmon Jane Nails &amp; Beauty</div>
+          <div class="addr">110-114 Hampden Rd, Artarmon NSW 2064, Australia</div>
+          <div class="meta">Phone: 0493 181 048</div>
+          <div class="note">Artarmon.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Artarmon+Jane+Nails+%26+Beauty+110-114+Hampden+Rd%2C+Artarmon+NSW+2064%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0493181048">Call</a>
+          </div>
+          <textarea id="note-82" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop call-first" data-id="83" data-search="daniele mosman handyman 31 mosman st, mosman nsw 2088, australia call first — handyman/service address.">
+        <div><input class="check" type="checkbox" id="stop-83" aria-label="Visited Daniele MOSMAN HANDYMAN"></div>
+        <div>
+          <div class="stop-title">83. Daniele MOSMAN HANDYMAN</div>
+          <div class="addr">31 Mosman St, Mosman NSW 2088, Australia</div>
+          <div class="meta">Phone: 0435 306 311</div>
+          <div class="note">Call first — handyman/service address.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Daniele+MOSMAN+HANDYMAN+31+Mosman+St%2C+Mosman+NSW+2088%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0435306311">Call</a>
+          </div>
+          <textarea id="note-83" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="84" data-search="colourful salon nails &amp; beauty shop 5/225-227 victoria rd, gladesville nsw 2111, australia gladesville shops.">
+        <div><input class="check" type="checkbox" id="stop-84" aria-label="Visited Colourful Salon Nails &amp; Beauty"></div>
+        <div>
+          <div class="stop-title">84. Colourful Salon Nails &amp; Beauty</div>
+          <div class="addr">Shop 5/225-227 Victoria Rd, Gladesville NSW 2111, Australia</div>
+          <div class="meta">Phone: 0478 554 246</div>
+          <div class="note">Gladesville shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Colourful+Salon+Nails+%26+Beauty+Shop+5%2F225-227+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0478554246">Call</a>
+          </div>
+          <textarea id="note-84" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+      <div class="stop" data-id="85" data-search="vee&#x27;s nails 3/203 victoria rd, gladesville nsw 2111, australia gladesville shops.">
+        <div><input class="check" type="checkbox" id="stop-85" aria-label="Visited Vee&#x27;s Nails"></div>
+        <div>
+          <div class="stop-title">85. Vee&#x27;s Nails</div>
+          <div class="addr">3/203 Victoria Rd, Gladesville NSW 2111, Australia</div>
+          <div class="meta">Phone: 0424 007 889</div>
+          <div class="note">Gladesville shops.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Vee%27s+Nails+3%2F203+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0424007889">Call</a>
+          </div>
+          <textarea id="note-85" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="route call-first" data-route="8. Call first / avoid wasted driving">
+    <div class="route-head">
+      <h2>8. Call first / avoid wasted driving</h2>
+      <p>Do not drive here unless they answer or confirm there is a business address to visit.</p>
+    </div>
+    <div class="route-body">
+      <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=North+Ryde+Handy+Gardener+Parklands+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open first 10 stops in Google Maps</a>
+
+      <div class="stop call-first" data-id="86" data-search="north ryde handy gardener parklands rd, north ryde nsw 2113, australia gardener/home service. do not visit without calling.">
+        <div><input class="check" type="checkbox" id="stop-86" aria-label="Visited North Ryde Handy Gardener"></div>
+        <div>
+          <div class="stop-title">86. North Ryde Handy Gardener</div>
+          <div class="addr">Parklands Rd, North Ryde NSW 2113, Australia</div>
+          <div class="meta">Phone: 0416 005 291</div>
+          <div class="note">Gardener/home service. Do not visit without calling.</div>
+          <div class="actions">
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=North+Ryde+Handy+Gardener+Parklands+Rd%2C+North+Ryde+NSW+2113%2C+Australia" target="_blank">Open stop in Maps</a>
+            <a class="small-link" href="tel:0416005291">Call</a>
+          </div>
+          <textarea id="note-86" placeholder="Quick note: owner not in / card left / follow up..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    <strong>Accuracy note:</strong> This plan is based on the addresses shown in your uploaded list. Check opening hours before leaving, and use the Maps links on the day for live traffic and parking.
+  </div>
+</main>
+<script>
+const STOPS = [{"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "Kings Cut Barbershop", "phone": "(02) 9889 7373", "address": "Macquarie Shopping Centre, Cnr Waterloo Rd and Herring Rd, Macquarie Park NSW 2113, Australia", "note": "Inside Macquarie Centre. Park once and walk.", "id": 1, "maps": "https://www.google.com/maps/search/?api=1&query=Kings+Cut+Barbershop+Macquarie+Shopping+Centre%2C+Cnr+Waterloo+Rd+and+Herring+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "All About iBrows", "phone": "0410 907 020", "address": "K2006, Level 2/74, Macquarie Park NSW 2113, Australia", "note": "Macquarie Centre area; confirm shop location.", "id": 2, "maps": "https://www.google.com/maps/search/?api=1&query=All+About+iBrows+K2006%2C+Level+2%2F74%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "Bliss Nails & Beauty Bar Macquarie Centre", "phone": "(02) 7813 6183", "address": "Shop R01-100, North Ryde NSW 2113, Australia", "note": "Macquarie Centre; walk with other centre shops.", "id": 3, "maps": "https://www.google.com/maps/search/?api=1&query=Bliss+Nails+%26+Beauty+Bar+Macquarie+Centre+Shop+R01-100%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "Imperial Massage Macquarie Centre", "phone": "(02) 9888 5556", "address": "Cnr Herring Rd & Waterloo Rd, North Ryde NSW 2113, Australia", "note": "Macquarie Centre.", "id": 4, "maps": "https://www.google.com/maps/search/?api=1&query=Imperial+Massage+Macquarie+Centre+Cnr+Herring+Rd+%26+Waterloo+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "Palms Healing Massage and Acupuncture", "phone": "(02) 8959 0095", "address": "Level 1, Shop 1048, Cnr Herring Rd & Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Macquarie Centre.", "id": 5, "maps": "https://www.google.com/maps/search/?api=1&query=Palms+Healing+Massage+and+Acupuncture+Level+1%2C+Shop+1048%2C+Cnr+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "1. Macquarie Centre / Herring & Waterloo walk", "business": "Weilisi - Remedial Massage & Natural Therapy", "phone": "(02) 8097 3527", "address": "4436A Herring Rd & Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Macquarie Centre / Level 4 area; confirm opposite Timezone.", "id": 6, "maps": "https://www.google.com/maps/search/?api=1&query=Weilisi+-+Remedial+Massage+%26+Natural+Therapy+4436A+Herring+Rd+%26+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "SO CAFE", "phone": "(02) 9878 0694", "address": "Shop 4A/33 Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Start after Macquarie Centre.", "id": 7, "maps": "https://www.google.com/maps/search/?api=1&query=SO+CAFE+Shop+4A%2F33+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "The Hungry Baker", "phone": "0449 936 658", "address": "Shop 3/8 Khartoum Rd, Macquarie Park NSW 2113, Australia", "note": "Close to Waterloo/Khartoum.", "id": 8, "maps": "https://www.google.com/maps/search/?api=1&query=The+Hungry+Baker+Shop+3%2F8+Khartoum+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Espresso 7ty8", "phone": "(02) 9889 7557", "address": "78 Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Waterloo Rd cluster.", "id": 9, "maps": "https://www.google.com/maps/search/?api=1&query=Espresso+7ty8+78+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "As Usual", "phone": "0437 557 522", "address": "Shop 8/101 Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Same address cluster as Chew Babe.", "id": 10, "maps": "https://www.google.com/maps/search/?api=1&query=As+Usual+Shop+8%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Chew Babe Pet Grooming Cafe", "phone": "0481 177 734", "address": "Shop 15/101 Waterloo Rd, Macquarie Park NSW 2113, Australia", "note": "Same stop as As Usual.", "id": 11, "maps": "https://www.google.com/maps/search/?api=1&query=Chew+Babe+Pet+Grooming+Cafe+Shop+15%2F101+Waterloo+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Totally Male Barbershop", "phone": "(02) 9567 8341", "address": "Shop T5/19 Halifax St, Macquarie Park NSW 2113, Australia", "note": "Halifax/Lachlan Square cluster.", "id": 12, "maps": "https://www.google.com/maps/search/?api=1&query=Totally+Male+Barbershop+Shop+T5%2F19+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Ocean Nails & Beauty, Macquarie Park (Lachlan's Square Village)", "phone": "0415 662 688", "address": "Lachlan's Square Village, 17 Halifax St, Macquarie Park NSW 2113, Australia", "note": "Same cluster as Halifax St.", "id": 13, "maps": "https://www.google.com/maps/search/?api=1&query=Ocean+Nails+%26+Beauty%2C+Macquarie+Park+%28Lachlan%27s+Square+Village%29+Lachlan%27s+Square+Village%2C+17+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Chicken V North Ryde", "phone": "(02) 7226 2121", "address": "13 Halifax St, Macquarie Park NSW 2113, Australia", "note": "Same Halifax St cluster.", "id": 14, "maps": "https://www.google.com/maps/search/?api=1&query=Chicken+V+North+Ryde+13+Halifax+St%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Eyelushes & Brows", "phone": "0481 207 668", "address": "152/1-15 Fontenoy Rd, Macquarie Park NSW 2113, Australia", "note": "Fontenoy/Mooltan cluster.", "id": 15, "maps": "https://www.google.com/maps/search/?api=1&query=Eyelushes+%26+Brows+152%2F1-15+Fontenoy+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Nicecute-Nail&Eyelash", "phone": "0447 667 125", "address": "5/2 Mooltan Ave, Macquarie Park NSW 2113, Australia", "note": "Close to Fontenoy Rd.", "id": 16, "maps": "https://www.google.com/maps/search/?api=1&query=Nicecute-Nail%26Eyelash+5%2F2+Mooltan+Ave%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Neelgri Cafe . Vegan & Vegetarian", "phone": "0491 222 248", "address": "Unit 4/6 Eden Park Dr, Macquarie Park NSW 2113, Australia", "note": "Eden Park Dr.", "id": 17, "maps": "https://www.google.com/maps/search/?api=1&query=Neelgri+Cafe+.+Vegan+%26+Vegetarian+Unit+4%2F6+Eden+Park+Dr%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Deux Cafe", "phone": "0451 453 899", "address": "1 Innovation Rd, Macquarie Park NSW 2113, Australia", "note": "Innovation/University cluster.", "id": 18, "maps": "https://www.google.com/maps/search/?api=1&query=Deux+Cafe+1+Innovation+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Perfect Brew Cafe", "phone": "(02) 9889 2946", "address": "16 University Ave, Macquarie Park NSW 2113, Australia", "note": "University Ave.", "id": 19, "maps": "https://www.google.com/maps/search/?api=1&query=Perfect+Brew+Cafe+16+University+Ave%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Macquarie Sports Physiotherapy", "phone": "(02) 9850 7999", "address": "Gymnasium Rd, Macquarie University NSW 2113, Australia", "note": "Macquarie Uni area.", "id": 20, "maps": "https://www.google.com/maps/search/?api=1&query=Macquarie+Sports+Physiotherapy+Gymnasium+Rd%2C+Macquarie+University+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Brew & Pour", "phone": "(02) 9887 3198", "address": "11 Talavera Rd, Macquarie Park NSW 2113, Australia", "note": "Talavera Rd cluster.", "id": 21, "maps": "https://www.google.com/maps/search/?api=1&query=Brew+%26+Pour+11+Talavera+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "Dante's Espresso Bar", "phone": "Check original list", "address": "118 Talavera Rd, Macquarie Park NSW 2113, Australia", "note": "Talavera Rd cluster.", "id": 22, "maps": "https://www.google.com/maps/search/?api=1&query=Dante%27s+Espresso+Bar+118+Talavera+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "2. Macquarie Park street loop", "business": "BaptistCare HopeCleaning", "phone": "1300 296 570", "address": "Unit 3/157 Balaclava Rd, Macquarie Park NSW 2113, Australia", "note": "Call first if it looks like office/service-only.", "id": 23, "maps": "https://www.google.com/maps/search/?api=1&query=BaptistCare+HopeCleaning+Unit+3%2F157+Balaclava+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "The Local Cafe Macquarie Park", "phone": "0414 770 928", "address": "6A/277 Lane Cove Rd, Macquarie Park NSW 2113, Australia", "note": "Start Lane Cove Rd side.", "id": 24, "maps": "https://www.google.com/maps/search/?api=1&query=The+Local+Cafe+Macquarie+Park+6A%2F277+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Blue Diamond Carwash", "phone": "0413 469 567", "address": "400 Lane Cove Rd, Macquarie Park NSW 2113, Australia", "note": "Lane Cove Rd.", "id": 25, "maps": "https://www.google.com/maps/search/?api=1&query=Blue+Diamond+Carwash+400+Lane+Cove+Rd%2C+Macquarie+Park+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Ryde Corner Medical Centre", "phone": "(02) 7240 1941", "address": "185 Lane Cove Rd, North Ryde NSW 2113, Australia", "note": "Lane Cove Rd.", "id": 26, "maps": "https://www.google.com/maps/search/?api=1&query=Ryde+Corner+Medical+Centre+185+Lane+Cove+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Dr Richard S Vici DENTAL SURGERY", "phone": "(02) 9888 5662", "address": "1/134 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Coxs Rd cluster.", "id": 27, "maps": "https://www.google.com/maps/search/?api=1&query=Dr+Richard+S+Vici+DENTAL+SURGERY+1%2F134+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Terry Ryan Automotive Services Pty Ltd", "phone": "(02) 9888 5198", "address": "118 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Coxs Rd cluster.", "id": 28, "maps": "https://www.google.com/maps/search/?api=1&query=Terry+Ryan+Automotive+Services+Pty+Ltd+118+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Flame Cafe North Ryde", "phone": "(02) 9888 5286", "address": "Shop 1/195 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Coxs Rd cluster.", "id": 29, "maps": "https://www.google.com/maps/search/?api=1&query=Flame+Cafe+North+Ryde+Shop+1%2F195+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Café SaBu", "phone": "(02) 9888 9901", "address": "203 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Coxs Rd cluster.", "id": 30, "maps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+SaBu+203+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Twin Scissors Barber Shop", "phone": "0414 444 042", "address": "211 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Coxs Rd cluster.", "id": 31, "maps": "https://www.google.com/maps/search/?api=1&query=Twin+Scissors+Barber+Shop+211+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "T19 Nails Studio", "phone": "0451 638 639", "address": "19/213 Coxs Rd, North Ryde NSW 2113, Australia", "note": "Same Coxs Rd block.", "id": 32, "maps": "https://www.google.com/maps/search/?api=1&query=T19+Nails+Studio+19%2F213+Coxs+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "QT lashes", "phone": "0433 223 614", "address": "5 Whiteside St, North Ryde NSW 2113, Australia", "note": "Near Coxs Rd.", "id": 33, "maps": "https://www.google.com/maps/search/?api=1&query=QT+lashes+5+Whiteside+St%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "By Gold Bar Beauty", "phone": "0450 088 930", "address": "44 Coxs Rd, East Ryde NSW 2113, Australia", "note": "East Ryde side of Coxs Rd.", "id": 34, "maps": "https://www.google.com/maps/search/?api=1&query=By+Gold+Bar+Beauty+44+Coxs+Rd%2C+East+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Cafe Trebbiano", "phone": "0451 866 577", "address": "3 Julius Ave, North Ryde NSW 2112, Australia", "note": "Julius Ave.", "id": 35, "maps": "https://www.google.com/maps/search/?api=1&query=Cafe+Trebbiano+3+Julius+Ave%2C+North+Ryde+NSW+2112%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Hair Attack", "phone": "(02) 8964 1444", "address": "2/2 Flinders Rd, North Ryde NSW 2113, Australia", "note": "Same small stop as Flinder's Cafe.", "id": 36, "maps": "https://www.google.com/maps/search/?api=1&query=Hair+Attack+2%2F2+Flinders+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Flinder's Cafe", "phone": "0404 679 207", "address": "4 Flinders Rd, North Ryde NSW 2113, Australia", "note": "Same Flinders Rd cluster.", "id": 37, "maps": "https://www.google.com/maps/search/?api=1&query=Flinder%27s+Cafe+4+Flinders+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "NN's Beauty And Nails", "phone": "(02) 9889 4427", "address": "20 Blenheim Rd, North Ryde NSW 2113, Australia", "note": "Blenheim cluster.", "id": 38, "maps": "https://www.google.com/maps/search/?api=1&query=NN%27s+Beauty+And+Nails+20+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Kyoto Emporium", "phone": "0403 644 290", "address": "3/22 Blenheim Rd, North Ryde NSW 2113, Australia", "note": "Blenheim cluster.", "id": 39, "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Emporium+3%2F22+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "Tilt Ryde", "phone": "(02) 7901 8827", "address": "2/22 Blenheim Rd, North Ryde NSW 2113, Australia", "note": "Blenheim cluster.", "id": 40, "maps": "https://www.google.com/maps/search/?api=1&query=Tilt+Ryde+2%2F22+Blenheim+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "3. North Ryde / Coxs Rd / Blenheim / Flinders", "business": "The Glow Lounge", "phone": "Check original list", "address": "1 Network Pl, North Ryde NSW 2113, Australia", "note": "Nearby business park.", "id": 41, "maps": "https://www.google.com/maps/search/?api=1&query=The+Glow+Lounge+1+Network+Pl%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Garage Barberz", "phone": "0435 415 215", "address": "4 Winston St, Marsfield NSW 2122, Australia", "note": "Marsfield start.", "id": 42, "maps": "https://www.google.com/maps/search/?api=1&query=Garage+Barberz+4+Winston+St%2C+Marsfield+NSW+2122%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "A.R.M Automotive Mobile Mechanic", "phone": "0450 407 160", "address": "123E Kent Rd, Marsfield NSW 2122, Australia", "note": "Mobile mechanic — call first before driving.", "id": 43, "maps": "https://www.google.com/maps/search/?api=1&query=A.R.M+Automotive+Mobile+Mechanic+123E+Kent+Rd%2C+Marsfield+NSW+2122%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Kent Road Auto Service Centre", "phone": "(02) 9888 7332", "address": "38 Kent Rd, North Ryde NSW 2113, Australia", "note": "Kent Rd.", "id": 44, "maps": "https://www.google.com/maps/search/?api=1&query=Kent+Road+Auto+Service+Centre+38+Kent+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "CURLI by Lilian", "phone": "0431 146 661", "address": "5 Delhi Rd, North Ryde NSW 2113, Australia", "note": "Likely small/salon appointment style — call if unsure.", "id": 45, "maps": "https://www.google.com/maps/search/?api=1&query=CURLI+by+Lilian+5+Delhi+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "North Epping Auto Repair", "phone": "(02) 9876 5383", "address": "11/288 Malton Rd, North Epping NSW 2121, Australia", "note": "North Epping.", "id": 46, "maps": "https://www.google.com/maps/search/?api=1&query=North+Epping+Auto+Repair+11%2F288+Malton+Rd%2C+North+Epping+NSW+2121%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "WITH Painting", "phone": "0431 545 543", "address": "26 Ferntree Pl, Epping NSW 2122, Australia", "note": "Call first — trade/home service.", "id": 47, "maps": "https://www.google.com/maps/search/?api=1&query=WITH+Painting+26+Ferntree+Pl%2C+Epping+NSW+2122%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Hair by Choi", "phone": "0431 399 341", "address": "Upstairs/217 Rowe St, Eastwood NSW 2122, Australia", "note": "Eastwood shops.", "id": 48, "maps": "https://www.google.com/maps/search/?api=1&query=Hair+by+Choi+Upstairs%2F217+Rowe+St%2C+Eastwood+NSW+2122%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Athvenus Nails Salon (Eastwood)", "phone": "(02) 9804 1945", "address": "Shop 3/7 Rutledge St, Eastwood NSW 2122, Australia", "note": "Eastwood shops.", "id": 49, "maps": "https://www.google.com/maps/search/?api=1&query=Athvenus+Nails+Salon+%28Eastwood%29+Shop+3%2F7+Rutledge+St%2C+Eastwood+NSW+2122%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Ocean Nails Carlingford", "phone": "0493 681 666", "address": "Shop 115/809 Pennant Hills Rd, Carlingford NSW 2118, Australia", "note": "Carlingford.", "id": 50, "maps": "https://www.google.com/maps/search/?api=1&query=Ocean+Nails+Carlingford+Shop+115%2F809+Pennant+Hills+Rd%2C+Carlingford+NSW+2118%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "KDA Tiling - All Kinds of Tiling", "phone": "0430 131 392", "address": "20 Angophora Pl, Pennant Hills NSW 2120, Australia", "note": "Call first — trade/home service.", "id": 51, "maps": "https://www.google.com/maps/search/?api=1&query=KDA+Tiling+-+All+Kinds+of+Tiling+20+Angophora+Pl%2C+Pennant+Hills+NSW+2120%2C+Australia"}, {"route": "4. Marsfield / Eastwood / Epping / Carlingford / Gordon", "business": "Dreamwood Home Services", "phone": "0416 790 414", "address": "Rosedale Rd, Gordon NSW 2072, Australia", "note": "Call first — home service / not likely walk-in.", "id": 52, "maps": "https://www.google.com/maps/search/?api=1&query=Dreamwood+Home+Services+Rosedale+Rd%2C+Gordon+NSW+2072%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "4 Station & Co West Ryde", "phone": "0433 270 377", "address": "4 W Parade, West Ryde NSW 2114, Australia", "note": "West Ryde station cluster.", "id": 53, "maps": "https://www.google.com/maps/search/?api=1&query=4+Station+%26+Co+West+Ryde+4+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Cafe Once Upon a Time", "phone": "(02) 9809 5343", "address": "8 W Parade, West Ryde NSW 2114, Australia", "note": "Same W Parade cluster.", "id": 54, "maps": "https://www.google.com/maps/search/?api=1&query=Cafe+Once+Upon+a+Time+8+W+Parade%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "DJ Borg Automotive", "phone": "(02) 9807 6587", "address": "17 Rhodes St, West Ryde NSW 2114, Australia", "note": "Near West Ryde station.", "id": 55, "maps": "https://www.google.com/maps/search/?api=1&query=DJ+Borg+Automotive+17+Rhodes+St%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Kablan Mowad & Sons", "phone": "(02) 9808 2869", "address": "17 Mellor St, West Ryde NSW 2114, Australia", "note": "Mellor St cluster.", "id": 56, "maps": "https://www.google.com/maps/search/?api=1&query=Kablan+Mowad+%26+Sons+17+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "LPD Automotive", "phone": "(02) 9807 4350", "address": "13 Mellor St, West Ryde NSW 2114, Australia", "note": "Mellor St cluster.", "id": 57, "maps": "https://www.google.com/maps/search/?api=1&query=LPD+Automotive+13+Mellor+St%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Omega Nails & Beauty West Ryde", "phone": "(02) 8542 1993", "address": "989 Victoria Rd, West Ryde NSW 2114, Australia", "note": "Victoria Rd cluster.", "id": 58, "maps": "https://www.google.com/maps/search/?api=1&query=Omega+Nails+%26+Beauty+West+Ryde+989+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Garo's hairstyle", "phone": "0407 000 616", "address": "Shop 1/995 Victoria Rd, West Ryde NSW 2114, Australia", "note": "Victoria Rd cluster.", "id": 59, "maps": "https://www.google.com/maps/search/?api=1&query=Garo%27s+hairstyle+Shop+1%2F995+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Breakpoint cafe", "phone": "0451 007 544", "address": "1007 Victoria Rd, West Ryde NSW 2114, Australia", "note": "Victoria Rd cluster.", "id": 60, "maps": "https://www.google.com/maps/search/?api=1&query=Breakpoint+cafe+1007+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "JS HAIR", "phone": "0406 160 049", "address": "1017/1019 Victoria Rd, West Ryde NSW 2114, Australia", "note": "Victoria Rd cluster.", "id": 61, "maps": "https://www.google.com/maps/search/?api=1&query=JS+HAIR+1017%2F1019+Victoria+Rd%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Hair We Go at Kelly's", "phone": "(02) 8970 8149", "address": "4/5A Chatham Rd, West Ryde NSW 2114, Australia", "note": "West Ryde.", "id": 62, "maps": "https://www.google.com/maps/search/?api=1&query=Hair+We+Go+at+Kelly%27s+4%2F5A+Chatham+Rd%2C+West+Ryde+NSW+2114%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Hair Image by Julie", "phone": "(02) 9878 4372", "address": "117 North Rd, Ryde NSW 2112, Australia", "note": "North Rd cluster.", "id": 63, "maps": "https://www.google.com/maps/search/?api=1&query=Hair+Image+by+Julie+117+North+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "MIDWAY BARBER", "phone": "Check original list", "address": "117C North Rd, Ryde NSW 2112, Australia", "note": "North Rd cluster.", "id": 64, "maps": "https://www.google.com/maps/search/?api=1&query=MIDWAY+BARBER+117C+North+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "5. West Ryde station / Victoria Rd / hair / cafes", "business": "Midway Autoport", "phone": "(02) 9878 2592", "address": "117 North Rd, Ryde NSW 2112, Australia", "note": "Same North Rd stop.", "id": 65, "maps": "https://www.google.com/maps/search/?api=1&query=Midway+Autoport+117+North+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Sevan Barber", "phone": "0417 020 502", "address": "190 Blaxland Rd, Ryde NSW 2112, Australia", "note": "Blaxland Rd cluster.", "id": 66, "maps": "https://www.google.com/maps/search/?api=1&query=Sevan+Barber+190+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Nyamka nail and lash", "phone": "Check original list", "address": "103 Blaxland Rd, Ryde NSW 2112, Australia", "note": "Blaxland Rd cluster.", "id": 67, "maps": "https://www.google.com/maps/search/?api=1&query=Nyamka+nail+and+lash+103+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Ryde Automotives", "phone": "(02) 9809 0999", "address": "332 Blaxland Rd, Ryde NSW 2112, Australia", "note": "Blaxland Rd.", "id": 68, "maps": "https://www.google.com/maps/search/?api=1&query=Ryde+Automotives+332+Blaxland+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Locked Inn", "phone": "Check original list", "address": "1 Princes St, Ryde NSW 2112, Australia", "note": "Ryde.", "id": 69, "maps": "https://www.google.com/maps/search/?api=1&query=Locked+Inn+1+Princes+St%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "LRB Smash Repairs", "phone": "(02) 9808 4600", "address": "35 Nancarrow Ave, Ryde NSW 2112, Australia", "note": "Ryde workshop.", "id": 70, "maps": "https://www.google.com/maps/search/?api=1&query=LRB+Smash+Repairs+35+Nancarrow+Ave%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "DIRECT AUTOCARE - Mobile Mechanic", "phone": "0455 468 824", "address": "7 Salerwong Pl, Ryde NSW 2112, Australia", "note": "Mobile mechanic — call first before driving.", "id": 71, "maps": "https://www.google.com/maps/search/?api=1&query=DIRECT+AUTOCARE+-+Mobile+Mechanic+7+Salerwong+Pl%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Ryde Car Services", "phone": "0403 104 616", "address": "Porter St, Ryde NSW 2112, Australia", "note": "Call first; address may not be a shopfront.", "id": 72, "maps": "https://www.google.com/maps/search/?api=1&query=Ryde+Car+Services+Porter+St%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Service Plus Automotive", "phone": "(02) 9807 8389", "address": "748 Victoria Rd, Ryde NSW 2112, Australia", "note": "Victoria Rd workshop cluster.", "id": 73, "maps": "https://www.google.com/maps/search/?api=1&query=Service+Plus+Automotive+748+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Tibby Rose Auto Electrical Service PTY LTD", "phone": "0404 056 686", "address": "744 Victoria Rd, Ryde NSW 2112, Australia", "note": "Same Victoria Rd cluster.", "id": 74, "maps": "https://www.google.com/maps/search/?api=1&query=Tibby+Rose+Auto+Electrical+Service+PTY+LTD+744+Victoria+Rd%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Quick-Fit Mufflers Brakes & Suspension", "phone": "(02) 9807 6099", "address": "38 Lane Cove Rd, Top Ryde NSW 2112, Australia", "note": "Top Ryde / Lane Cove Rd.", "id": 75, "maps": "https://www.google.com/maps/search/?api=1&query=Quick-Fit+Mufflers+Brakes+%26+Suspension+38+Lane+Cove+Rd%2C+Top+Ryde+NSW+2112%2C+Australia"}, {"route": "6. Ryde / Top Ryde / Blaxland / Victoria Rd workshops", "business": "Colour Touch Top Ryde", "phone": "0435 821 119", "address": "Top Ryde Shopping Centre, Shop 1014, Ryde NSW 2112, Australia", "note": "Top Ryde Shopping Centre.", "id": 76, "maps": "https://www.google.com/maps/search/?api=1&query=Colour+Touch+Top+Ryde+Top+Ryde+Shopping+Centre%2C+Shop+1014%2C+Ryde+NSW+2112%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Kana Sushi East Ryde & Fox and Bird Cafe", "phone": "(02) 9183 4898", "address": "8 Sager Pl, East Ryde NSW 2113, Australia", "note": "East Ryde cluster.", "id": 77, "maps": "https://www.google.com/maps/search/?api=1&query=Kana+Sushi+East+Ryde+%26+Fox+and+Bird+Cafe+8+Sager+Pl%2C+East+Ryde+NSW+2113%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "HOUSE OF HAIR ON MELBA! Mobile Hairdresser", "phone": "0419 298 904", "address": "113 Melba Dr, East Ryde NSW 2113, Australia", "note": "Mobile hairdresser — call first before driving.", "id": 78, "maps": "https://www.google.com/maps/search/?api=1&query=HOUSE+OF+HAIR+ON+MELBA%21+Mobile+Hairdresser+113+Melba+Dr%2C+East+Ryde+NSW+2113%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "The Cove Handyman Services", "phone": "0405 627 798", "address": "510/2 Burley St, Lane Cove North NSW 2066, Australia", "note": "Call first — handyman/service address.", "id": 79, "maps": "https://www.google.com/maps/search/?api=1&query=The+Cove+Handyman+Services+510%2F2+Burley+St%2C+Lane+Cove+North+NSW+2066%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Natural Nails Design", "phone": "(02) 9428 3381", "address": "43-45 Burns Bay Rd, Lane Cove NSW 2066, Australia", "note": "Lane Cove shops.", "id": 80, "maps": "https://www.google.com/maps/search/?api=1&query=Natural+Nails+Design+43-45+Burns+Bay+Rd%2C+Lane+Cove+NSW+2066%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "YF Beauty Lane Cove / You First Beauty & Nails", "phone": "(02) 9007 1128", "address": "Shop 1a/83 Longueville Rd, Lane Cove NSW 2066, Australia", "note": "Lane Cove shops.", "id": 81, "maps": "https://www.google.com/maps/search/?api=1&query=YF+Beauty+Lane+Cove+%2F+You+First+Beauty+%26+Nails+Shop+1a%2F83+Longueville+Rd%2C+Lane+Cove+NSW+2066%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Artarmon Jane Nails & Beauty", "phone": "0493 181 048", "address": "110-114 Hampden Rd, Artarmon NSW 2064, Australia", "note": "Artarmon.", "id": 82, "maps": "https://www.google.com/maps/search/?api=1&query=Artarmon+Jane+Nails+%26+Beauty+110-114+Hampden+Rd%2C+Artarmon+NSW+2064%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Daniele MOSMAN HANDYMAN", "phone": "0435 306 311", "address": "31 Mosman St, Mosman NSW 2088, Australia", "note": "Call first — handyman/service address.", "id": 83, "maps": "https://www.google.com/maps/search/?api=1&query=Daniele+MOSMAN+HANDYMAN+31+Mosman+St%2C+Mosman+NSW+2088%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Colourful Salon Nails & Beauty", "phone": "0478 554 246", "address": "Shop 5/225-227 Victoria Rd, Gladesville NSW 2111, Australia", "note": "Gladesville shops.", "id": 84, "maps": "https://www.google.com/maps/search/?api=1&query=Colourful+Salon+Nails+%26+Beauty+Shop+5%2F225-227+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia"}, {"route": "7. East Ryde / Lane Cove / Artarmon / Gladesville / Mosman", "business": "Vee's Nails", "phone": "0424 007 889", "address": "3/203 Victoria Rd, Gladesville NSW 2111, Australia", "note": "Gladesville shops.", "id": 85, "maps": "https://www.google.com/maps/search/?api=1&query=Vee%27s+Nails+3%2F203+Victoria+Rd%2C+Gladesville+NSW+2111%2C+Australia"}, {"route": "8. Call first / avoid wasted driving", "business": "North Ryde Handy Gardener", "phone": "0416 005 291", "address": "Parklands Rd, North Ryde NSW 2113, Australia", "note": "Gardener/home service. Do not visit without calling.", "id": 86, "maps": "https://www.google.com/maps/search/?api=1&query=North+Ryde+Handy+Gardener+Parklands+Rd%2C+North+Ryde+NSW+2113%2C+Australia"}];
+const KEY = "business_visit_plan_v1";
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e) { return {}; }
+}
+function saveState(state) {
+  localStorage.setItem(KEY, JSON.stringify(state));
+}
+function updateProgress() {
+  const checks = [...document.querySelectorAll(".check")];
+  const done = checks.filter(c => c.checked).length;
+  const total = checks.length;
+  document.getElementById("progress").style.width = total ? ((done/total)*100) + "%" : "0%";
+  document.getElementById("progressText").textContent = done + " / " + total + " visited";
+  checks.forEach(c => {
+    const stop = c.closest(".stop");
+    stop.classList.toggle("done", c.checked);
+  });
+}
+function init() {
+  const state = loadState();
+  STOPS.forEach(s => {
+    const c = document.getElementById("stop-" + s.id);
+    const n = document.getElementById("note-" + s.id);
+    if (state[s.id]?.checked) c.checked = true;
+    if (state[s.id]?.note) n.value = state[s.id].note;
+    c.addEventListener("change", () => {
+      const st = loadState();
+      st[s.id] = st[s.id] || {};
+      st[s.id].checked = c.checked;
+      st[s.id].updated = new Date().toISOString();
+      saveState(st);
+      updateProgress();
+    });
+    n.addEventListener("input", () => {
+      const st = loadState();
+      st[s.id] = st[s.id] || {};
+      st[s.id].note = n.value;
+      st[s.id].updated = new Date().toISOString();
+      saveState(st);
+    });
+  });
+  document.getElementById("search").addEventListener("input", filterStops);
+  updateProgress();
+}
+function filterStops() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  document.querySelectorAll(".stop").forEach(stop => {
+    stop.style.display = !q || stop.dataset.search.includes(q) ? "grid" : "none";
+  });
+  document.querySelectorAll(".route").forEach(route => {
+    const visible = [...route.querySelectorAll(".stop")].some(s => s.style.display !== "none");
+    route.style.display = visible ? "block" : "none";
+  });
+}
+function clearAll() {
+  if (!confirm("Reset all checkboxes and notes on this device?")) return;
+  localStorage.removeItem(KEY);
+  STOPS.forEach(s => {
+    document.getElementById("stop-" + s.id).checked = false;
+    document.getElementById("note-" + s.id).value = "";
+  });
+  updateProgress();
+}
+function exportCSV() {
+  const state = loadState();
+  const rows = [["id","route","business","phone","address","visited","note","updated"]];
+  STOPS.forEach(s => {
+    const st = state[s.id] || {};
+    rows.push([s.id, s.route, s.business, s.phone, s.address, st.checked ? "yes" : "no", st.note || "", st.updated || ""]);
+  });
+  const csv = rows.map(r => r.map(v => '"' + String(v).replaceAll('"','""') + '"').join(",")).join("\n");
+  const blob = new Blob([csv], {type:"text/csv"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "business_visit_progress.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+init();
+</script>
+</body>
+</html>
